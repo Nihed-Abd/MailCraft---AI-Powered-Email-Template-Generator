@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "467550838574",
+    "project_id": "gemini-competetion-abhvuf",
+    "storage_bucket": "gemini-competetion-abhvuf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:467550838574:android:b75ec620080c3f227424bf",
+        "android_client_info": {
+          "package_name": "com.mycompany.geminicompetetion"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDC6P39yx-hjyZfaX2izoRECpq7buPQMnU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
