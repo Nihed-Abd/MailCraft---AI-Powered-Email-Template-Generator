@@ -3,20 +3,18 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'email_verficiation_alert_model.dart';
-export 'email_verficiation_alert_model.dart';
+import 'login_component_model.dart';
+export 'login_component_model.dart';
 
-class EmailVerficiationAlertWidget extends StatefulWidget {
-  const EmailVerficiationAlertWidget({super.key});
+class LoginComponentWidget extends StatefulWidget {
+  const LoginComponentWidget({super.key});
 
   @override
-  State<EmailVerficiationAlertWidget> createState() =>
-      _EmailVerficiationAlertWidgetState();
+  State<LoginComponentWidget> createState() => _LoginComponentWidgetState();
 }
 
-class _EmailVerficiationAlertWidgetState
-    extends State<EmailVerficiationAlertWidget> {
-  late EmailVerficiationAlertModel _model;
+class _LoginComponentWidgetState extends State<LoginComponentWidget> {
+  late LoginComponentModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -27,7 +25,7 @@ class _EmailVerficiationAlertWidgetState
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => EmailVerficiationAlertModel());
+    _model = createModel(context, () => LoginComponentModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -84,17 +82,17 @@ class _EmailVerficiationAlertWidgetState
                     ],
                   ),
                   Container(
-                    width: 197.0,
-                    height: 136.0,
+                    width: 239.0,
+                    height: 200.0,
                     decoration: const BoxDecoration(
                       shape: BoxShape.rectangle,
                     ),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
                       child: Image.asset(
-                        'assets/images/Animation_-_1723109598457.gif',
+                        'assets/images/Animation_-_1723119429347.gif',
                         width: 300.0,
-                        height: 241.0,
+                        height: 220.0,
                         fit: BoxFit.fitHeight,
                       ),
                     ),
@@ -110,35 +108,12 @@ class _EmailVerficiationAlertWidgetState
                     children: [
                       Flexible(
                         child: Text(
-                          'Email verification sent !',
+                          'Login successfully !',
                           style:
                               FlutterFlowTheme.of(context).titleLarge.override(
                                     fontFamily: 'Inter',
                                     letterSpacing: 0.0,
                                   ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Flexible(
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              20.0, 0.0, 20.0, 0.0),
-                          child: Text(
-                            'Please check your Email inbox to verify your account ..',
-                            textAlign: TextAlign.center,
-                            maxLines: 3,
-                            style: FlutterFlowTheme.of(context)
-                                .labelMedium
-                                .override(
-                                  fontFamily: 'Inter',
-                                  letterSpacing: 0.0,
-                                ),
-                          ),
                         ),
                       ),
                     ],
@@ -153,9 +128,9 @@ class _EmailVerficiationAlertWidgetState
                         Expanded(
                           child: FFButtonWidget(
                             onPressed: () async {
-                              Navigator.pop(context);
+                              context.pushNamed('HomePage');
                             },
-                            text: 'Done',
+                            text: 'Log In',
                             options: FFButtonOptions(
                               height: 56.0,
                               padding: const EdgeInsetsDirectional.fromSTEB(

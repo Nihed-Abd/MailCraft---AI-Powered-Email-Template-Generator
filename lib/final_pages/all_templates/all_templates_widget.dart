@@ -179,8 +179,8 @@ class _AllTemplatesWidgetState extends State<AllTemplatesWidget>
                                       context.pushNamed('HomePage');
                                     },
                                     child: Container(
-                                      width: 40.0,
-                                      height: 40.0,
+                                      width: 50.0,
+                                      height: 50.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .primary,

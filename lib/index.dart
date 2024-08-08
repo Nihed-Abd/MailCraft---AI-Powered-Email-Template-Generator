@@ -10,7 +10,7 @@ export '/generation_steps/submit_prompt/submit_prompt_widget.dart'
     show SubmitPromptWidget;
 export '/final_pages/edit_profile/edit_profile_widget.dart'
     show EditProfileWidget;
-export '/pages/police/police_widget.dart' show PoliceWidget;
+export '/final_pages/police/police_widget.dart' show PoliceWidget;
 export '/final_pages/display_template_result/display_template_result_widget.dart'
     show DisplayTemplateResultWidget;
 export '/generation_steps/submit_prompt_step2/submit_prompt_step2_widget.dart'

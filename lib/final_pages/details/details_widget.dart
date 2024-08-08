@@ -282,8 +282,8 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                         context.safePop();
                                       },
                                       child: Container(
-                                        width: 40.0,
-                                        height: 40.0,
+                                        width: 50.0,
+                                        height: 50.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .primary,

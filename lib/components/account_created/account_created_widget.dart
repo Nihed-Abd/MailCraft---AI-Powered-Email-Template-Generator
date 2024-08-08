@@ -83,28 +83,17 @@ class _AccountCreatedWidgetState extends State<AccountCreatedWidget> {
                   ),
                   Container(
                     width: 130.0,
-                    height: 130.0,
+                    height: 120.0,
                     decoration: const BoxDecoration(
-                      color: Color(0xFF27711B),
-                      shape: BoxShape.circle,
+                      shape: BoxShape.rectangle,
                     ),
-                    child: Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
-                      child: Container(
-                        width: 90.0,
-                        height: 90.0,
-                        decoration: const BoxDecoration(
-                          color: Color(0xFC00FF14),
-                          shape: BoxShape.circle,
-                        ),
-                        child: Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
-                          child: Icon(
-                            Icons.check_circle,
-                            color: FlutterFlowTheme.of(context).primaryText,
-                            size: 30.0,
-                          ),
-                        ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.asset(
+                        'assets/images/Animation_-_1723109747471.gif',
+                        width: 300.0,
+                        height: 220.0,
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
