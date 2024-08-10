@@ -403,7 +403,13 @@ class _AllTemplatesWidgetState extends State<AllTemplatesWidget>
                               height: 528.0,
                               decoration: const BoxDecoration(),
                               child: StreamBuilder<List<TemplatesRecord>>(
-                                stream: queryTemplatesRecord(),
+                                stream: queryTemplatesRecord(
+                                  queryBuilder: (templatesRecord) =>
+                                      templatesRecord.where(
+                                    'Private',
+                                    isEqualTo: false,
+                                  ),
+                                ),
                                 builder: (context, snapshot) {
                                   // Customize what your widget looks like when it's loading.
                                   if (!snapshot.hasData) {

@@ -359,17 +359,20 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                             ),
                                       ),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          10.0, 0.0, 0.0, 0.0),
-                                      child: ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(100.0),
-                                        child: Image.network(
-                                          rowUsersRecord.photoUrl,
-                                          width: 65.0,
-                                          height: 65.0,
-                                          fit: BoxFit.fill,
+                                    Align(
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 0.0, 0.0, 0.0),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(100.0),
+                                          child: Image.network(
+                                            rowUsersRecord.photoUrl,
+                                            width: 58.0,
+                                            height: 59.0,
+                                            fit: BoxFit.fill,
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -380,7 +383,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                         child: Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 0.0, 0.0),
+                                                  12.0, 0.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.min,
                                             mainAxisAlignment:
@@ -454,7 +457,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                         Flexible(
                                           child: Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(-1.0, 0.0),
                                             child: Text(
                                               'Rating',
                                               style:
@@ -534,7 +537,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                         Flexible(
                                           child: Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(-1.0, 0.0),
                                             child: Text(
                                               'Category',
                                               style:
@@ -559,65 +562,19 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                           size: 20.0,
                                         ),
                                         Flexible(
-                                          child: Text(
-                                            detailsTemplatesRecord.category,
-                                            style: FlutterFlowTheme.of(context)
-                                                .labelLarge
-                                                .override(
-                                                  fontFamily: 'Inter',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ].divide(const SizedBox(width: 8.0)),
-                                    ),
-                                  ].divide(const SizedBox(height: 8.0)),
-                                ),
-                              ),
-                              Expanded(
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Flexible(
                                           child: Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(-1.0, 0.0),
                                             child: Text(
-                                              'Date',
+                                              detailsTemplatesRecord.category,
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .labelMedium
+                                                      .labelLarge
                                                       .override(
                                                         fontFamily: 'Inter',
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Icon(
-                                          FFIcons.kclock,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          size: 20.0,
-                                        ),
-                                        Flexible(
-                                          child: Text(
-                                            dateTimeFormat("yMd",
-                                                detailsTemplatesRecord.date!),
-                                            style: FlutterFlowTheme.of(context)
-                                                .labelLarge
-                                                .override(
-                                                  fontFamily: 'Inter',
-                                                  letterSpacing: 0.0,
-                                                ),
                                           ),
                                         ),
                                       ].divide(const SizedBox(width: 8.0)),
@@ -637,7 +594,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                         ),
                         Container(
                           width: double.infinity,
-                          height: 155.0,
+                          height: 178.0,
                           decoration: const BoxDecoration(
                             color: Colors.transparent,
                           ),
@@ -743,6 +700,44 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                       ),
                                     ].divide(const SizedBox(width: 10.0)),
                                   ),
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Flexible(
+                                      child: Text(
+                                        'Date :',
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              fontSize: 18.0,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ),
+                                    Icon(
+                                      FFIcons.kclock,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      size: 20.0,
+                                    ),
+                                    Flexible(
+                                      child: Text(
+                                        dateTimeFormat("yMd",
+                                            detailsTemplatesRecord.date!),
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ),
+                                  ].divide(const SizedBox(width: 8.0)),
                                 ),
                               ].divide(const SizedBox(height: 12.0)),
                             ),

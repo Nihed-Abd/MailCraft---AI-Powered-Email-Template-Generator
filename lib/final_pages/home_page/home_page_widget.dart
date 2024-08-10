@@ -1,16 +1,20 @@
 import '/backend/backend.dart';
 import '/components/nav_bar/nav_bar_widget.dart';
+import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/pages/share_my_app/share_my_app_widget.dart';
 import 'dart:ui';
 import 'package:badges/badges.dart' as badges;
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'home_page_model.dart';
 export 'home_page_model.dart';
 
@@ -30,6 +34,28 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => HomePageModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      await Future.delayed(const Duration(milliseconds: 3000));
+      await showModalBottomSheet(
+        isScrollControlled: true,
+        backgroundColor: Colors.transparent,
+        enableDrag: false,
+        context: context,
+        builder: (context) {
+          return WebViewAware(
+            child: GestureDetector(
+              onTap: () => FocusScope.of(context).unfocus(),
+              child: Padding(
+                padding: MediaQuery.viewInsetsOf(context),
+                child: const ShareMyAppWidget(),
+              ),
+            ),
+          );
+        },
+      ).then((value) => safeSetState(() {}));
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -320,6 +346,19 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
+                                if ((isAndroid == true) &&
+                                    responsiveVisibility(
+                                      context: context,
+                                      desktop: false,
+                                    ))
+                                  FlutterFlowAdBanner(
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 1.0,
+                                    height: 61.0,
+                                    showsTestAd: true,
+                                    androidAdUnitID:
+                                        'ca-app-pub-1405921903688410/7825872017',
+                                  ),
                                 SingleChildScrollView(
                                   scrollDirection: Axis.horizontal,
                                   child: Row(
@@ -426,11 +465,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                            'Latest Templates 🔥',
+                                            'Latest Templates ',
                                             style: FlutterFlowTheme.of(context)
                                                 .titleMedium
                                                 .override(
                                                   fontFamily: 'Inter',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -471,6 +513,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       child:
                                           StreamBuilder<List<TemplatesRecord>>(
                                         stream: queryTemplatesRecord(
+                                          queryBuilder: (templatesRecord) =>
+                                              templatesRecord.where(
+                                            'Private',
+                                            isEqualTo: false,
+                                          ),
                                           limit: 5,
                                         ),
                                         builder: (context, snapshot) {

@@ -53,7 +53,7 @@ class _GeneratingLoadingWidgetState extends State<GeneratingLoadingWidget> {
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       await geminiGenerateText(
         context,
-        '\"Use this prompt: \'${widget.description}\' and respond only with HTML file code for an animated email web page in the \'${widget.category}\' category containing this title: \'${widget.title}\', this image : \'${widget.image}\' (or \'delete image\' if \'imagepath\' is not without image ), and these colors: \'${functions.colorToString(widget.color1)}\', \'${functions.colorToString(widget.color2)}\', \'${functions.colorToString(widget.color3)}\'.\"response just with html code including css and icons and images neeeded to make beatifull email to send it like beefree.io emails and make sure to adjust image size to be fixed in the middle  as a logo and the background always make it animated ( you can use gif images ) ',
+        'in one response message , give me html file code for an email page including all styles and animations needed to make an amazing animated email ready to sent with title : \"${widget.title}\" ,  matches this description : \"${widget.description}\" , for a${widget.category}. with this url well resized image and well displayed with content and title : the url \"${widget.image}\" . use this chart  colors: ( ${functions.colorToString(widget.color1)} , ${functions.colorToString(widget.color2)},${functions.colorToString(widget.color3)}). don\'t forget to make it in a creative and animated way in one code file to make the best page ever for what i need and make your response just a html code without any comments .',
       ).then((generatedText) {
         safeSetState(() => _model.response = generatedText);
       });

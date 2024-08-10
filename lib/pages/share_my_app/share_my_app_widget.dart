@@ -6,21 +6,22 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'share_model.dart';
-export 'share_model.dart';
+import 'package:share_plus/share_plus.dart';
+import 'share_my_app_model.dart';
+export 'share_my_app_model.dart';
 
-class ShareWidget extends StatefulWidget {
+class ShareMyAppWidget extends StatefulWidget {
   /// its a component to share my app
   ///
-  const ShareWidget({super.key});
+  const ShareMyAppWidget({super.key});
 
   @override
-  State<ShareWidget> createState() => _ShareWidgetState();
+  State<ShareMyAppWidget> createState() => _ShareMyAppWidgetState();
 }
 
-class _ShareWidgetState extends State<ShareWidget>
+class _ShareMyAppWidgetState extends State<ShareMyAppWidget>
     with TickerProviderStateMixin {
-  late ShareModel _model;
+  late ShareMyAppModel _model;
 
   final animationsMap = <String, AnimationInfo>{};
 
@@ -33,7 +34,7 @@ class _ShareWidgetState extends State<ShareWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ShareModel());
+    _model = createModel(context, () => ShareMyAppModel());
 
     animationsMap.addAll({
       'buttonOnPageLoadAnimation': AnimationInfo(
@@ -125,11 +126,11 @@ class _ShareWidgetState extends State<ShareWidget>
                   child: FFButtonWidget(
                     onPressed: () async {
                       HapticFeedback.lightImpact();
-                      Navigator.pop(context);
                       await Share.share(
-                        '',
+                        'geminicompetetion://geminicompetetion.com${GoRouterState.of(context).uri.toString()}',
                         sharePositionOrigin: getWidgetBoundingBox(context),
                       );
+                      Navigator.pop(context);
                     },
                     text: 'Share the app',
                     icon: const Icon(

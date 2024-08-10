@@ -1240,6 +1240,7 @@ class _SubmitPromptStep2WidgetState extends State<SubmitPromptStep2Widget>
                                                   safeSetState(() {}));
                                             },
                                             child: Container(
+                                              width: double.infinity,
                                               height: 40.0,
                                               decoration: BoxDecoration(
                                                 color: const Color(0x76257AFD),
