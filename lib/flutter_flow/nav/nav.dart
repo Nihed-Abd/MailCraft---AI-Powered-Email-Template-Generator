@@ -286,6 +286,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'notifications',
           path: '/notifications',
           builder: (context, params) => const NotificationsWidget(),
+        ),
+        FFRoute(
+          name: 'MyTemplate',
+          path: '/myTemplate',
+          builder: (context, params) => MyTemplateWidget(
+            template: params.getParam(
+              'template',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['Templates'],
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

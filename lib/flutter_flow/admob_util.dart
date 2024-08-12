@@ -124,6 +124,7 @@ void adMobUpdateRequestConfiguration() {
     return;
   }
   final RequestConfiguration requestConfiguration = RequestConfiguration(
+    tagForChildDirectedTreatment: TagForChildDirectedTreatment.no,
     maxAdContentRating: MaxAdContentRating.g,
   );
   MobileAds.instance.updateRequestConfiguration(requestConfiguration);

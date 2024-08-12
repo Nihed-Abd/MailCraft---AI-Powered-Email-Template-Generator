@@ -26,3 +26,4 @@ export '/final_pages/all_templates/all_templates_widget.dart'
     show AllTemplatesWidget;
 export '/pages/notifications/notifications_widget.dart'
     show NotificationsWidget;
+export '/final_pages/my_template/my_template_widget.dart' show MyTemplateWidget;

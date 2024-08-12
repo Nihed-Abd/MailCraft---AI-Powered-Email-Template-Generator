@@ -219,6 +219,9 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                                         code:
                                                             detailsTemplatesRecord
                                                                 .code,
+                                                        subject:
+                                                            detailsTemplatesRecord
+                                                                .category,
                                                       ),
                                                     ),
                                                   ),

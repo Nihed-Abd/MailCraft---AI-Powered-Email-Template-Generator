@@ -1,10 +1,8 @@
 import '/components/add_title/add_title_widget.dart';
-import '/components/alert_generation/alert_generation_widget.dart';
 import '/components/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/admob_util.dart' as admob;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -34,15 +32,6 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => SubmitPromptModel());
-
-    // On page load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      admob.loadInterstitialAd(
-        "",
-        "ca-app-pub-1405921903688410/2517340053",
-        true,
-      );
-    });
 
     animationsMap.addAll({
       'containerOnActionTriggerAnimation1': AnimationInfo(
@@ -1381,36 +1370,11 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                 ],
               ),
             ),
-            InkWell(
-              splashColor: Colors.transparent,
-              focusColor: Colors.transparent,
-              hoverColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-              onTap: () async {
-                await showModalBottomSheet(
-                  isScrollControlled: true,
-                  backgroundColor: Colors.transparent,
-                  enableDrag: false,
-                  context: context,
-                  builder: (context) {
-                    return WebViewAware(
-                      child: GestureDetector(
-                        onTap: () => FocusScope.of(context).unfocus(),
-                        child: Padding(
-                          padding: MediaQuery.viewInsetsOf(context),
-                          child: const AlertGenerationWidget(),
-                        ),
-                      ),
-                    );
-                  },
-                ).then((value) => safeSetState(() {}));
-              },
-              child: wrapWithModel(
-                model: _model.navBarModel,
-                updateCallback: () => setState(() {}),
-                child: const NavBarWidget(
-                  activePage: 3,
-                ),
+            wrapWithModel(
+              model: _model.navBarModel,
+              updateCallback: () => setState(() {}),
+              child: const NavBarWidget(
+                activePage: 3,
               ),
             ),
           ],

@@ -363,7 +363,7 @@ class _AddImageWidgetState extends State<AddImageWidget> {
                           ParamType.String,
                         ),
                         'image': serializeParam(
-                          'without image',
+                          'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/gemini-competetion-abhvuf/assets/m5cai2kp2c0s/logo_MailCraft_ù.png',
                           ParamType.String,
                         ),
                       }.withoutNulls,

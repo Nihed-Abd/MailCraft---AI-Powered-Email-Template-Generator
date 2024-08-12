@@ -19,7 +19,7 @@ void main() async {
   await initFirebase();
 
   await FlutterFlowTheme.initialize();
-  adMobRequestConsent();
+
   adMobUpdateRequestConfiguration();
 
   runApp(const MyApp());

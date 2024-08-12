@@ -444,135 +444,156 @@ class _HistoryWidgetState extends State<HistoryWidget>
                                 ),
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      30.0, 10.0, 30.0, 20.0),
-                                  child: Container(
-                                    width:
-                                        MediaQuery.sizeOf(context).width * 1.0,
-                                    height: 125.0,
-                                    constraints: const BoxConstraints(
-                                      maxWidth: 450.0,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      boxShadow: const [
-                                        BoxShadow(
-                                          blurRadius: 30.0,
-                                          color: Color(0x33000000),
-                                          offset: Offset(
-                                            0.0,
-                                            10.0,
+                                      30.0, 10.0, 30.0, 0.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed(
+                                        'MyTemplate',
+                                        queryParameters: {
+                                          'template': serializeParam(
+                                            listViewTemplatesRecord.reference,
+                                            ParamType.DocumentReference,
                                           ),
-                                        )
-                                      ],
-                                      borderRadius: BorderRadius.circular(30.0),
-                                      border: Border.all(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
+                                        }.withoutNulls,
+                                      );
+                                    },
+                                    child: Container(
+                                      width: MediaQuery.sizeOf(context).width *
+                                          1.0,
+                                      height: 125.0,
+                                      constraints: const BoxConstraints(
+                                        maxWidth: 450.0,
                                       ),
-                                    ),
-                                    child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          20.0, 10.0, 20.0, 20.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Container(
-                                                width: 100.0,
-                                                height: 99.0,
-                                                decoration: BoxDecoration(
-                                                  image: DecorationImage(
-                                                    fit: BoxFit.cover,
-                                                    image: Image.network(
-                                                      listViewTemplatesRecord
-                                                          .image,
-                                                    ).image,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.0),
-                                                ),
-                                              ),
-                                              Expanded(
-                                                flex: 2,
-                                                child: Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          15.0, 0.0, 0.0, 0.0),
-                                                  child: Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    children: [
-                                                      Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        children: [
-                                                          Expanded(
-                                                            child: AutoSizeText(
-                                                              listViewTemplatesRecord
-                                                                  .title,
-                                                              maxLines: 1,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .displaySmall
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Readex Pro',
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                    fontSize:
-                                                                        18.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                  ),
-                                                            ).animateOnPageLoad(
-                                                                animationsMap[
-                                                                    'textOnPageLoadAnimation1']!),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                      Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        children: [
-                                                          Expanded(
-                                                            child: AutoSizeText(
-                                                              listViewTemplatesRecord
-                                                                  .description,
-                                                              maxLines: 2,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .titleSmall
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Inter',
-                                                                    fontSize:
-                                                                        12.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                  ),
-                                                            ).animateOnPageLoad(
-                                                                animationsMap[
-                                                                    'textOnPageLoadAnimation2']!),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        boxShadow: const [
+                                          BoxShadow(
+                                            blurRadius: 30.0,
+                                            color: Color(0x33000000),
+                                            offset: Offset(
+                                              0.0,
+                                              10.0,
+                                            ),
+                                          )
                                         ],
+                                        borderRadius:
+                                            BorderRadius.circular(30.0),
+                                        border: Border.all(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            20.0, 10.0, 20.0, 0.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Container(
+                                                  width: 100.0,
+                                                  height: 91.0,
+                                                  decoration: BoxDecoration(
+                                                    image: DecorationImage(
+                                                      fit: BoxFit.cover,
+                                                      image: Image.network(
+                                                        listViewTemplatesRecord
+                                                            .image,
+                                                      ).image,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            12.0),
+                                                  ),
+                                                ),
+                                                Expanded(
+                                                  flex: 2,
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(15.0, 0.0,
+                                                                0.0, 0.0),
+                                                    child: Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            Expanded(
+                                                              child:
+                                                                  AutoSizeText(
+                                                                listViewTemplatesRecord
+                                                                    .title,
+                                                                maxLines: 1,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .displaySmall
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Readex Pro',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
+                                                                      fontSize:
+                                                                          18.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                              ).animateOnPageLoad(
+                                                                      animationsMap[
+                                                                          'textOnPageLoadAnimation1']!),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                        Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            Expanded(
+                                                              child:
+                                                                  AutoSizeText(
+                                                                listViewTemplatesRecord
+                                                                    .description,
+                                                                maxLines: 2,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Inter',
+                                                                      fontSize:
+                                                                          12.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                              ).animateOnPageLoad(
+                                                                      animationsMap[
+                                                                          'textOnPageLoadAnimation2']!),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ).animateOnActionTrigger(

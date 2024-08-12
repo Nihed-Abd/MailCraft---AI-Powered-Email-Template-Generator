@@ -13,22 +13,7 @@ import 'add_profile_picture_model.dart';
 export 'add_profile_picture_model.dart';
 
 class AddProfilePictureWidget extends StatefulWidget {
-  const AddProfilePictureWidget({
-    super.key,
-    required this.title,
-    required this.description,
-    required this.color1,
-    required this.color2,
-    required this.color3,
-    required this.category,
-  });
-
-  final String? title;
-  final String? description;
-  final Color? color1;
-  final Color? color2;
-  final Color? color3;
-  final String? category;
+  const AddProfilePictureWidget({super.key});
 
   @override
   State<AddProfilePictureWidget> createState() =>
@@ -301,6 +286,16 @@ class _AddProfilePictureWidgetState extends State<AddProfilePictureWidget> {
                 child: FFButtonWidget(
                   onPressed: () async {
                     HapticFeedback.lightImpact();
+                    if (_model.formKey.currentState == null ||
+                        !_model.formKey.currentState!.validate()) {
+                      return;
+                    }
+
+                    await currentUserReference!.update(createUsersRecordData(
+                      photoUrl:
+                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTZZZbbQQbcuEeSOAmg7wkfVn6KPQQOiWROQ&s',
+                      uid: currentUserReference?.id,
+                    ));
                     Navigator.pop(context);
                     await showModalBottomSheet(
                       isScrollControlled: true,

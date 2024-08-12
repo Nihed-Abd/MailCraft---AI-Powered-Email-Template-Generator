@@ -1,6 +1,5 @@
 import '/backend/backend.dart';
 import '/components/nav_bar/nav_bar_widget.dart';
-import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -346,19 +345,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                if ((isAndroid == true) &&
-                                    responsiveVisibility(
-                                      context: context,
-                                      desktop: false,
-                                    ))
-                                  FlutterFlowAdBanner(
-                                    width:
-                                        MediaQuery.sizeOf(context).width * 1.0,
-                                    height: 61.0,
-                                    showsTestAd: true,
-                                    androidAdUnitID:
-                                        'ca-app-pub-1405921903688410/7825872017',
-                                  ),
                                 SingleChildScrollView(
                                   scrollDirection: Axis.horizontal,
                                   child: Row(

@@ -72,58 +72,6 @@ class _AddTitleWidgetState extends State<AddTitleWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
-                child: FFButtonWidget(
-                  onPressed: () async {
-                    HapticFeedback.lightImpact();
-                    if (_model.formKey.currentState == null ||
-                        !_model.formKey.currentState!.validate()) {
-                      return;
-                    }
-
-                    context.pushNamed(
-                      'submitPromptStep2',
-                      queryParameters: {
-                        'title': serializeParam(
-                          _model.folderTitleTextController1.text,
-                          ParamType.String,
-                        ),
-                        'description': serializeParam(
-                          _model.folderTitleTextController2.text,
-                          ParamType.String,
-                        ),
-                      }.withoutNulls,
-                    );
-                  },
-                  text: 'Generate Now',
-                  icon: const Icon(
-                    FFIcons.kflashOutline,
-                    size: 25.0,
-                  ),
-                  options: FFButtonOptions(
-                    width: double.infinity,
-                    height: 55.0,
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primary,
-                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Inter',
-                          color: Colors.white,
-                          fontSize: 18.0,
-                          letterSpacing: 0.0,
-                          fontWeight: FontWeight.w600,
-                        ),
-                    elevation: 0.0,
-                    borderSide: const BorderSide(
-                      color: Colors.transparent,
-                      width: 1.0,
-                    ),
-                    borderRadius: BorderRadius.circular(50.0),
-                  ),
-                ),
-              ),
-              Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                 child: Text(
                   'Generate New Email Page',
@@ -294,6 +242,58 @@ class _AddTitleWidgetState extends State<AddTitleWidget> {
                       ),
                     ),
                   ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
+                child: FFButtonWidget(
+                  onPressed: () async {
+                    HapticFeedback.lightImpact();
+                    if (_model.formKey.currentState == null ||
+                        !_model.formKey.currentState!.validate()) {
+                      return;
+                    }
+
+                    context.pushNamed(
+                      'submitPromptStep2',
+                      queryParameters: {
+                        'title': serializeParam(
+                          _model.folderTitleTextController1.text,
+                          ParamType.String,
+                        ),
+                        'description': serializeParam(
+                          _model.folderTitleTextController2.text,
+                          ParamType.String,
+                        ),
+                      }.withoutNulls,
+                    );
+                  },
+                  text: 'Generate Now',
+                  icon: const Icon(
+                    FFIcons.kflashOutline,
+                    size: 25.0,
+                  ),
+                  options: FFButtonOptions(
+                    width: double.infinity,
+                    height: 55.0,
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    iconPadding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    color: FlutterFlowTheme.of(context).primary,
+                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                          fontFamily: 'Inter',
+                          color: Colors.white,
+                          fontSize: 18.0,
+                          letterSpacing: 0.0,
+                          fontWeight: FontWeight.w600,
+                        ),
+                    elevation: 0.0,
+                    borderSide: const BorderSide(
+                      color: Colors.transparent,
+                      width: 1.0,
+                    ),
+                    borderRadius: BorderRadius.circular(50.0),
+                  ),
                 ),
               ),
               Padding(

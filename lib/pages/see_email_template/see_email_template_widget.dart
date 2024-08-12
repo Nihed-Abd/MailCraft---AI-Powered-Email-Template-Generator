@@ -10,9 +10,11 @@ class SeeEmailTemplateWidget extends StatefulWidget {
   const SeeEmailTemplateWidget({
     super.key,
     required this.code,
+    required this.subject,
   });
 
   final String? code;
+  final String? subject;
 
   @override
   State<SeeEmailTemplateWidget> createState() => _SeeEmailTemplateWidgetState();

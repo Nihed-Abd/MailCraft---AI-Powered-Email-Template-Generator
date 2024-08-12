@@ -380,12 +380,11 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                                             itemBuilder:
                                                                 (context,
                                                                         index) =>
-                                                                    Icon(
+                                                                    const Icon(
                                                               Icons
                                                                   .star_rounded,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryText,
+                                                              color: Color(
+                                                                  0xFFFFD700),
                                                             ),
                                                             direction:
                                                                 Axis.horizontal,

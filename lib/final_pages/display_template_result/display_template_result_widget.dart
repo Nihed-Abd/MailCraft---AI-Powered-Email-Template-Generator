@@ -5,10 +5,10 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_web_view.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'display_template_result_model.dart';
 export 'display_template_result_model.dart';
@@ -264,18 +264,13 @@ class _DisplayTemplateResultWidgetState
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  await launchUrl(Uri(
-                                      scheme: 'mailto',
-                                      path:
-                                          _model.folderTitleTextController.text,
-                                      query: {
-                                        'subject': widget.title!,
-                                        'body': widget.code!,
-                                      }
-                                          .entries
-                                          .map((MapEntry<String, String> e) =>
-                                              '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
-                                          .join('&')));
+                                  await actions.sendEmail(
+                                    context,
+                                    _model.folderTitleTextController.text,
+                                    currentUserDisplayName,
+                                    widget.code,
+                                    widget.category,
+                                  );
                                   await showModalBottomSheet(
                                     isScrollControlled: true,
                                     backgroundColor: Colors.transparent,

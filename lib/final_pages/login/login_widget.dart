@@ -1,6 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/components/account_created/account_created_widget.dart';
+import '/components/add_profile_picture/add_profile_picture_widget.dart';
 import '/components/forgot_password/forgot_password_widget.dart';
 import '/components/login_component/login_component_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -207,7 +207,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                   alignment: const AlignmentDirectional(0.0, 1.0),
                                   child: Container(
                                     width: double.infinity,
-                                    height: 500.0,
+                                    height: 600.0,
                                     constraints: const BoxConstraints(
                                       maxWidth: 570.0,
                                     ),
@@ -1530,7 +1530,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                             padding:
                                                                                 MediaQuery.viewInsetsOf(context),
                                                                             child:
-                                                                                const AccountCreatedWidget(),
+                                                                                const AddProfilePictureWidget(),
                                                                           ),
                                                                         ),
                                                                       );
@@ -1538,11 +1538,6 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                   ).then((value) =>
                                                                       safeSetState(
                                                                           () {}));
-
-                                                                  context.pushNamedAuth(
-                                                                      'login',
-                                                                      context
-                                                                          .mounted);
                                                                 },
                                                                 text:
                                                                     'Create Account',
