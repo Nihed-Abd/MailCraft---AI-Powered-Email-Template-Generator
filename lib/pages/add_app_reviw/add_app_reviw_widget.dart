@@ -3,9 +3,12 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'add_app_reviw_model.dart';
 export 'add_app_reviw_model.dart';
 
@@ -46,12 +49,12 @@ class _AddAppReviwWidgetState extends State<AddAppReviwWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 1.0),
+      alignment: AlignmentDirectional(0.0, 1.0),
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          borderRadius: const BorderRadius.only(
+          borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(0.0),
             bottomRight: Radius.circular(0.0),
             topLeft: Radius.circular(20.0),
@@ -59,13 +62,13 @@ class _AddAppReviwWidgetState extends State<AddAppReviwWidget> {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+          padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Align(
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: Container(
                   width: 100.0,
                   height: 5.0,
@@ -76,7 +79,7 @@ class _AddAppReviwWidgetState extends State<AddAppReviwWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 8.0, 24.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(24.0, 8.0, 24.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -108,12 +111,12 @@ class _AddAppReviwWidgetState extends State<AddAppReviwWidget> {
                     autovalidateMode: AutovalidateMode.disabled,
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 12.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -135,7 +138,7 @@ class _AddAppReviwWidgetState extends State<AddAppReviwWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 24.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -150,7 +153,7 @@ class _AddAppReviwWidgetState extends State<AddAppReviwWidget> {
                                   ),
                                   direction: Axis.horizontal,
                                   initialRating: _model.ratingBarValue ??= 3.0,
-                                  unratedColor: const Color(0x55257AFD),
+                                  unratedColor: Color(0x55257AFD),
                                   itemCount: 5,
                                   itemSize: 32.0,
                                   glowColor:
@@ -160,7 +163,7 @@ class _AddAppReviwWidgetState extends State<AddAppReviwWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 24.0, 0.0, 24.0),
                             child: TextFormField(
                               controller: _model.textController,
@@ -233,7 +236,7 @@ class _AddAppReviwWidgetState extends State<AddAppReviwWidget> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 24.0),
+                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 24.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -247,8 +250,8 @@ class _AddAppReviwWidgetState extends State<AddAppReviwWidget> {
                         options: FFButtonOptions(
                           width: 150.0,
                           height: 54.0,
-                          padding: const EdgeInsets.all(0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsets.all(0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).alternate,
                           textStyle: FlutterFlowTheme.of(context)
@@ -302,9 +305,9 @@ class _AddAppReviwWidgetState extends State<AddAppReviwWidget> {
                         text: 'Submit',
                         options: FFButtonOptions(
                           height: 54.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle: FlutterFlowTheme.of(context)
@@ -323,10 +326,10 @@ class _AddAppReviwWidgetState extends State<AddAppReviwWidget> {
                         ),
                       ),
                     ),
-                  ].divide(const SizedBox(width: 16.0)),
+                  ].divide(SizedBox(width: 16.0)),
                 ),
               ),
-            ].addToEnd(const SizedBox(height: 50.0)),
+            ].addToEnd(SizedBox(height: 50.0)),
           ),
         ),
       ),

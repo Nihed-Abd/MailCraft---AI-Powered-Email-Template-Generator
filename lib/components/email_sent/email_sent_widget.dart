@@ -3,6 +3,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'email_sent_model.dart';
 export 'email_sent_model.dart';
 
@@ -40,11 +42,11 @@ class _EmailSentWidgetState extends State<EmailSentWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 1.0),
+      alignment: AlignmentDirectional(0.0, 1.0),
       child: Container(
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).primaryBackground,
-          borderRadius: const BorderRadius.only(
+          borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(0.0),
             bottomRight: Radius.circular(0.0),
             topLeft: Radius.circular(20.0),
@@ -52,7 +54,7 @@ class _EmailSentWidgetState extends State<EmailSentWidget> {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 60.0),
+          padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 60.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -84,21 +86,21 @@ class _EmailSentWidgetState extends State<EmailSentWidget> {
                   Container(
                     width: 130.0,
                     height: 130.0,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       color: Color(0xFF27711B),
                       shape: BoxShape.circle,
                     ),
                     child: Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Container(
                         width: 90.0,
                         height: 90.0,
-                        decoration: const BoxDecoration(
+                        decoration: BoxDecoration(
                           color: Color(0xFC00FF14),
                           shape: BoxShape.circle,
                         ),
                         child: Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Icon(
                             Icons.check_circle,
                             color: FlutterFlowTheme.of(context).primaryText,
@@ -108,7 +110,7 @@ class _EmailSentWidgetState extends State<EmailSentWidget> {
                       ),
                     ),
                   ),
-                ].addToStart(const SizedBox(height: 16.0)),
+                ].addToStart(SizedBox(height: 16.0)),
               ),
               Column(
                 mainAxisSize: MainAxisSize.min,
@@ -135,7 +137,7 @@ class _EmailSentWidgetState extends State<EmailSentWidget> {
                     children: [
                       Flexible(
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 20.0, 0.0),
                           child: Text(
                             'Reset password link already sent !\nPlease check your email to reset password before login .',
@@ -154,7 +156,7 @@ class _EmailSentWidgetState extends State<EmailSentWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -167,9 +169,9 @@ class _EmailSentWidgetState extends State<EmailSentWidget> {
                             text: 'Done',
                             options: FFButtonOptions(
                               height: 56.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   24.0, 16.0, 24.0, 16.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -187,9 +189,9 @@ class _EmailSentWidgetState extends State<EmailSentWidget> {
                       ],
                     ),
                   ),
-                ].divide(const SizedBox(height: 10.0)),
+                ].divide(SizedBox(height: 10.0)),
               ),
-            ].divide(const SizedBox(height: 30.0)),
+            ].divide(SizedBox(height: 30.0)),
           ),
         ),
       ),

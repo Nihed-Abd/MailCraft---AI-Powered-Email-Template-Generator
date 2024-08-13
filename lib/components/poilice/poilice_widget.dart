@@ -1,6 +1,8 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'poilice_model.dart';
 export 'poilice_model.dart';
 
@@ -38,15 +40,15 @@ class _PoiliceWidgetState extends State<PoiliceWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Container(
         width: 342.1,
         height: 388.3,
-        decoration: const BoxDecoration(),
+        decoration: BoxDecoration(),
         child: Stack(
           children: [
             Align(
-              alignment: const AlignmentDirectional(0.0, 1.0),
+              alignment: AlignmentDirectional(0.0, 1.0),
               child: Container(
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 height: 341.5,
@@ -56,7 +58,7 @@ class _PoiliceWidgetState extends State<PoiliceWidget> {
                     BoxShadow(
                       blurRadius: 4.0,
                       color: FlutterFlowTheme.of(context).primary,
-                      offset: const Offset(
+                      offset: Offset(
                         0.0,
                         2.0,
                       ),
@@ -65,7 +67,7 @@ class _PoiliceWidgetState extends State<PoiliceWidget> {
                   borderRadius: BorderRadius.circular(40.0),
                 ),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -74,7 +76,7 @@ class _PoiliceWidgetState extends State<PoiliceWidget> {
                         children: [
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   20.0, 0.0, 20.0, 0.0),
                               child: Text(
                                 'Nihed \nBenAbdennour',
@@ -96,7 +98,7 @@ class _PoiliceWidgetState extends State<PoiliceWidget> {
                         children: [
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   20.0, 20.0, 20.0, 0.0),
                               child: Text(
                                 'MailCraft, created for the Gemini competition, harnesses the power of the Gemini API to provide users with a seamless experience in designing customized email templates. Our app allows users to effortlessly generate HTML email templates by simply specifying a title, description, desired colors, logo, and template category. Whether it\'s a birthday greeting, professional communication, event invitation, or any other category, MailCraft makes email design easy and intuitive.',
@@ -121,11 +123,11 @@ class _PoiliceWidgetState extends State<PoiliceWidget> {
               ),
             ),
             Align(
-              alignment: const AlignmentDirectional(0.0, -1.0),
+              alignment: AlignmentDirectional(0.0, -1.0),
               child: Container(
                 width: 372.0,
                 height: 113.0,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
                 ),
                 child: Row(
@@ -135,11 +137,11 @@ class _PoiliceWidgetState extends State<PoiliceWidget> {
                     Container(
                       width: 130.0,
                       height: 112.0,
-                      decoration: const BoxDecoration(),
+                      decoration: BoxDecoration(),
                       child: Stack(
                         children: [
                           Align(
-                            alignment: const AlignmentDirectional(0.0, 1.0),
+                            alignment: AlignmentDirectional(0.0, 1.0),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(8.0),
                               child: Image.asset(
@@ -151,7 +153,7 @@ class _PoiliceWidgetState extends State<PoiliceWidget> {
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(0.0, -1.0),
+                            alignment: AlignmentDirectional(0.0, -1.0),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(8.0),
                               child: Image.asset(
@@ -167,12 +169,12 @@ class _PoiliceWidgetState extends State<PoiliceWidget> {
                     ),
                     Flexible(
                       child: Align(
-                        alignment: const AlignmentDirectional(-3.0, 0.0),
+                        alignment: AlignmentDirectional(-3.0, 0.0),
                         child: Container(
                           width: 120.0,
                           height: 120.0,
                           clipBehavior: Clip.antiAlias,
-                          decoration: const BoxDecoration(
+                          decoration: BoxDecoration(
                             shape: BoxShape.circle,
                           ),
                           child: Image.asset(
@@ -185,7 +187,7 @@ class _PoiliceWidgetState extends State<PoiliceWidget> {
                     Container(
                       width: 130.0,
                       height: 100.0,
-                      decoration: const BoxDecoration(),
+                      decoration: BoxDecoration(),
                       child: Stack(
                         children: [
                           ClipRRect(
@@ -198,7 +200,7 @@ class _PoiliceWidgetState extends State<PoiliceWidget> {
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(0.0, 1.0),
+                            alignment: AlignmentDirectional(0.0, 1.0),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(8.0),
                               child: Image.asset(

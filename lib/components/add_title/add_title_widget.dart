@@ -3,6 +3,8 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'add_title_model.dart';
 export 'add_title_model.dart';
 
@@ -46,12 +48,12 @@ class _AddTitleWidgetState extends State<AddTitleWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 1.0),
+      alignment: AlignmentDirectional(0.0, 1.0),
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          borderRadius: const BorderRadius.only(
+          borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(0.0),
             bottomRight: Radius.circular(0.0),
             topLeft: Radius.circular(24.0),
@@ -59,7 +61,7 @@ class _AddTitleWidgetState extends State<AddTitleWidget> {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 32.0),
+          padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 32.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -72,7 +74,7 @@ class _AddTitleWidgetState extends State<AddTitleWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                 child: Text(
                   'Generate New Email Page',
                   textAlign: TextAlign.center,
@@ -85,7 +87,7 @@ class _AddTitleWidgetState extends State<AddTitleWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                 child: Text(
                   'Add Project title and describe your desire below !',
                   textAlign: TextAlign.start,
@@ -104,8 +106,8 @@ class _AddTitleWidgetState extends State<AddTitleWidget> {
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 12.0),
-                      child: SizedBox(
+                          EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 12.0),
+                      child: Container(
                         width: double.infinity,
                         child: TextFormField(
                           controller: _model.folderTitleTextController1,
@@ -173,8 +175,8 @@ class _AddTitleWidgetState extends State<AddTitleWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
-                      child: SizedBox(
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                      child: Container(
                         width: double.infinity,
                         child: TextFormField(
                           controller: _model.folderTitleTextController2,
@@ -245,7 +247,7 @@ class _AddTitleWidgetState extends State<AddTitleWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     HapticFeedback.lightImpact();
@@ -269,16 +271,16 @@ class _AddTitleWidgetState extends State<AddTitleWidget> {
                     );
                   },
                   text: 'Generate Now',
-                  icon: const Icon(
+                  icon: Icon(
                     FFIcons.kflashOutline,
                     size: 25.0,
                   ),
                   options: FFButtonOptions(
                     width: double.infinity,
                     height: 55.0,
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',
@@ -288,7 +290,7 @@ class _AddTitleWidgetState extends State<AddTitleWidget> {
                           fontWeight: FontWeight.w600,
                         ),
                     elevation: 0.0,
-                    borderSide: const BorderSide(
+                    borderSide: BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),
@@ -297,7 +299,7 @@ class _AddTitleWidgetState extends State<AddTitleWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     HapticFeedback.lightImpact();
@@ -307,9 +309,9 @@ class _AddTitleWidgetState extends State<AddTitleWidget> {
                   options: FFButtonOptions(
                     width: double.infinity,
                     height: 55.0,
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).alternate,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',
@@ -318,7 +320,7 @@ class _AddTitleWidgetState extends State<AddTitleWidget> {
                           fontWeight: FontWeight.w600,
                         ),
                     elevation: 0.0,
-                    borderSide: const BorderSide(
+                    borderSide: BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),

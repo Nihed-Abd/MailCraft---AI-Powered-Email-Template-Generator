@@ -7,8 +7,12 @@ import '/flutter_flow/flutter_flow_web_view.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'my_template_model.dart';
 export 'my_template_model.dart';
@@ -51,7 +55,7 @@ class _MyTemplateWidgetState extends State<MyTemplateWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<TemplatesRecord>(
-      stream: TemplatesRecord.getDocument(widget.template!),
+      stream: TemplatesRecord.getDocument(widget!.template!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -86,12 +90,12 @@ class _MyTemplateWidgetState extends State<MyTemplateWidget> {
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(8.0, 40.0, 8.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(8.0, 40.0, 8.0, 0.0),
                       child: Container(
                         width: double.infinity,
                         height: 410.0,
                         decoration: BoxDecoration(
-                          boxShadow: const [
+                          boxShadow: [
                             BoxShadow(
                               blurRadius: 4.0,
                               color: Color(0x33000000),
@@ -101,7 +105,7 @@ class _MyTemplateWidgetState extends State<MyTemplateWidget> {
                               ),
                             )
                           ],
-                          borderRadius: const BorderRadius.only(
+                          borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(40.0),
                             bottomRight: Radius.circular(40.0),
                             topLeft: Radius.circular(40.0),
@@ -112,11 +116,11 @@ class _MyTemplateWidgetState extends State<MyTemplateWidget> {
                             width: 2.0,
                           ),
                         ),
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsets.all(12.0),
+                            padding: EdgeInsets.all(12.0),
                             child: FlutterFlowWebView(
                               content: functions.convertToHtml(
                                   myTemplateTemplatesRecord.code)!,
@@ -130,13 +134,13 @@ class _MyTemplateWidgetState extends State<MyTemplateWidget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
+                      padding: EdgeInsetsDirectional.fromSTEB(
                           16.0, 12.0, 16.0, 32.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Text(
                               myTemplateTemplatesRecord.title,
@@ -152,7 +156,7 @@ class _MyTemplateWidgetState extends State<MyTemplateWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 10.0, 24.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -167,7 +171,7 @@ class _MyTemplateWidgetState extends State<MyTemplateWidget> {
                                         children: [
                                           Flexible(
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Text(
                                                 'Rating',
@@ -195,7 +199,7 @@ class _MyTemplateWidgetState extends State<MyTemplateWidget> {
                                           Flexible(
                                             child: FutureBuilder<int>(
                                               future: queryLikesRecordCount(
-                                                parent: widget.template,
+                                                parent: widget!.template,
                                               ),
                                               builder: (context, snapshot) {
                                                 // Customize what your widget looks like when it's loading.
@@ -232,9 +236,9 @@ class _MyTemplateWidgetState extends State<MyTemplateWidget> {
                                               },
                                             ),
                                           ),
-                                        ].divide(const SizedBox(width: 8.0)),
+                                        ].divide(SizedBox(width: 8.0)),
                                       ),
-                                    ].divide(const SizedBox(height: 8.0)),
+                                    ].divide(SizedBox(height: 8.0)),
                                   ),
                                 ),
                                 Expanded(
@@ -246,7 +250,7 @@ class _MyTemplateWidgetState extends State<MyTemplateWidget> {
                                         children: [
                                           Flexible(
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Text(
                                                 'Category',
@@ -273,7 +277,7 @@ class _MyTemplateWidgetState extends State<MyTemplateWidget> {
                                           ),
                                           Flexible(
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Text(
                                                 myTemplateTemplatesRecord
@@ -288,16 +292,16 @@ class _MyTemplateWidgetState extends State<MyTemplateWidget> {
                                               ),
                                             ),
                                           ),
-                                        ].divide(const SizedBox(width: 8.0)),
+                                        ].divide(SizedBox(width: 8.0)),
                                       ),
-                                    ].divide(const SizedBox(height: 8.0)),
+                                    ].divide(SizedBox(height: 8.0)),
                                   ),
                                 ),
-                              ].divide(const SizedBox(width: 8.0)),
+                              ].divide(SizedBox(width: 8.0)),
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 10.0, 24.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -377,7 +381,7 @@ class _MyTemplateWidgetState extends State<MyTemplateWidget> {
                                   ],
                                 ),
                                 Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
@@ -396,7 +400,7 @@ class _MyTemplateWidgetState extends State<MyTemplateWidget> {
                                         color: myTemplateTemplatesRecord.color3,
                                         size: 40.0,
                                       ),
-                                    ].divide(const SizedBox(width: 10.0)),
+                                    ].divide(SizedBox(width: 10.0)),
                                   ),
                                 ),
                                 Row(
@@ -435,9 +439,9 @@ class _MyTemplateWidgetState extends State<MyTemplateWidget> {
                                             ),
                                       ),
                                     ),
-                                  ].divide(const SizedBox(width: 8.0)),
+                                  ].divide(SizedBox(width: 8.0)),
                                 ),
-                              ].divide(const SizedBox(height: 12.0)),
+                              ].divide(SizedBox(height: 12.0)),
                             ),
                           ),
                           Form(
@@ -448,9 +452,9 @@ class _MyTemplateWidgetState extends State<MyTemplateWidget> {
                               children: [
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 24.0, 20.0, 12.0),
-                                    child: SizedBox(
+                                    child: Container(
                                       width: double.infinity,
                                       child: TextFormField(
                                         controller:
@@ -538,7 +542,7 @@ class _MyTemplateWidgetState extends State<MyTemplateWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 5.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -569,7 +573,7 @@ class _MyTemplateWidgetState extends State<MyTemplateWidget> {
                                                     MediaQuery.viewInsetsOf(
                                                         context),
                                                 child:
-                                                    const EmailTemplateSentWidget(),
+                                                    EmailTemplateSentWidget(),
                                               ),
                                             ),
                                           );
@@ -588,10 +592,10 @@ class _MyTemplateWidgetState extends State<MyTemplateWidget> {
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Container(
                               width: 405.0,
-                              decoration: const BoxDecoration(),
+                              decoration: BoxDecoration(),
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
@@ -606,11 +610,11 @@ class _MyTemplateWidgetState extends State<MyTemplateWidget> {
                                   ),
                                   Flexible(
                                     child: Align(
-                                      alignment: const AlignmentDirectional(1.0, 0.0),
+                                      alignment: AlignmentDirectional(1.0, 0.0),
                                       child: Icon(
                                         FFIcons.klockFilled,
                                         color: _model.switchValue == false
-                                            ? const Color(0xFFFFA400)
+                                            ? Color(0xFFFFA400)
                                             : FlutterFlowTheme.of(context)
                                                 .secondaryText,
                                         size: _model.switchValue == true
@@ -627,14 +631,14 @@ class _MyTemplateWidgetState extends State<MyTemplateWidget> {
                                             : false,
                                     onChanged: (newValue) async {
                                       setState(
-                                          () => _model.switchValue = newValue);
-                                      if (newValue) {
-                                        await widget.template!
+                                          () => _model.switchValue = newValue!);
+                                      if (newValue!) {
+                                        await widget!.template!
                                             .update(createTemplatesRecordData(
                                           private: true,
                                         ));
                                       } else {
-                                        await widget.template!
+                                        await widget!.template!
                                             .update(createTemplatesRecordData(
                                           private: false,
                                         ));
@@ -642,9 +646,9 @@ class _MyTemplateWidgetState extends State<MyTemplateWidget> {
                                     },
                                     activeColor:
                                         FlutterFlowTheme.of(context).primary,
-                                    activeTrackColor: const Color(0x80257AFD),
-                                    inactiveTrackColor: const Color(0x67FFA400),
-                                    inactiveThumbColor: const Color(0xFFFFA400),
+                                    activeTrackColor: Color(0x80257AFD),
+                                    inactiveTrackColor: Color(0x67FFA400),
+                                    inactiveThumbColor: Color(0xFFFFA400),
                                   ),
                                   Icon(
                                     Icons.public,
@@ -656,12 +660,12 @@ class _MyTemplateWidgetState extends State<MyTemplateWidget> {
                                         ? 24.0
                                         : 30.0,
                                   ),
-                                ].divide(const SizedBox(width: 6.0)),
+                                ].divide(SizedBox(width: 6.0)),
                               ),
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 32.0, 0.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -670,16 +674,16 @@ class _MyTemplateWidgetState extends State<MyTemplateWidget> {
                                 context.pushNamed('History');
                               },
                               text: 'Back',
-                              icon: const Icon(
+                              icon: Icon(
                                 Icons.arrow_back,
                                 size: 25.0,
                               ),
                               options: FFButtonOptions(
                                 width: double.infinity,
                                 height: 55.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -692,7 +696,7 @@ class _MyTemplateWidgetState extends State<MyTemplateWidget> {
                                       fontWeight: FontWeight.w600,
                                     ),
                                 elevation: 0.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),

@@ -1,8 +1,11 @@
 import '/components/welcome_comp/welcome_comp_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'welcome_page_model.dart';
 export 'welcome_page_model.dart';
@@ -40,7 +43,7 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
               onTap: () => FocusScope.of(context).unfocus(),
               child: Padding(
                 padding: MediaQuery.viewInsetsOf(context),
-                child: const WelcomeCompWidget(),
+                child: WelcomeCompWidget(),
               ),
             ),
           );
@@ -67,7 +70,7 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget> {
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         body: SafeArea(
           top: true,
-          child: SizedBox(
+          child: Container(
             width: double.infinity,
             height: double.infinity,
             child: Stack(

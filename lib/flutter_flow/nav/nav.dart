@@ -1,14 +1,20 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import '/backend/backend.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
+import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/lat_lng.dart';
+import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -73,58 +79,58 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const WelcomePageWidget() : const LoginWidget(),
+          appStateNotifier.loggedIn ? WelcomePageWidget() : LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const WelcomePageWidget() : const LoginWidget(),
+              appStateNotifier.loggedIn ? WelcomePageWidget() : LoginWidget(),
         ),
         FFRoute(
           name: 'login',
           path: '/login',
-          builder: (context, params) => const LoginWidget(),
+          builder: (context, params) => LoginWidget(),
         ),
         FFRoute(
           name: 'HomePage',
           path: '/homePage',
-          builder: (context, params) => const HomePageWidget(),
+          builder: (context, params) => HomePageWidget(),
         ),
         FFRoute(
           name: 'History',
           path: '/history',
-          builder: (context, params) => const HistoryWidget(),
+          builder: (context, params) => HistoryWidget(),
         ),
         FFRoute(
           name: 'Reviews',
           path: '/reviews',
-          builder: (context, params) => const ReviewsWidget(),
+          builder: (context, params) => ReviewsWidget(),
         ),
         FFRoute(
           name: 'Profile',
           path: '/profile',
-          builder: (context, params) => const ProfileWidget(),
+          builder: (context, params) => ProfileWidget(),
         ),
         FFRoute(
           name: 'WelcomePage',
           path: '/welcomePage',
-          builder: (context, params) => const WelcomePageWidget(),
+          builder: (context, params) => WelcomePageWidget(),
         ),
         FFRoute(
           name: 'submitPrompt',
           path: '/submitPrompt',
-          builder: (context, params) => const SubmitPromptWidget(),
+          builder: (context, params) => SubmitPromptWidget(),
         ),
         FFRoute(
           name: 'EditProfile',
           path: '/editProfile',
-          builder: (context, params) => const EditProfileWidget(),
+          builder: (context, params) => EditProfileWidget(),
         ),
         FFRoute(
           name: 'Police',
           path: '/police',
-          builder: (context, params) => const PoliceWidget(),
+          builder: (context, params) => PoliceWidget(),
         ),
         FFRoute(
           name: 'DisplayTemplateResult',
@@ -280,12 +286,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'allTemplates',
           path: '/allTemplates',
-          builder: (context, params) => const AllTemplatesWidget(),
+          builder: (context, params) => AllTemplatesWidget(),
         ),
         FFRoute(
           name: 'notifications',
           path: '/notifications',
-          builder: (context, params) => const NotificationsWidget(),
+          builder: (context, params) => NotificationsWidget(),
         ),
         FFRoute(
           name: 'MyTemplate',
@@ -535,7 +541,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

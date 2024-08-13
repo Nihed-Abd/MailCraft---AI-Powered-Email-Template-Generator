@@ -3,9 +3,13 @@ import '/components/nav_bar/nav_bar_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'submit_prompt_model.dart';
 export 'submit_prompt_model.dart';
@@ -42,8 +46,8 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
             curve: Curves.bounceOut,
             delay: 0.0.ms,
             duration: 200.0.ms,
-            begin: const Offset(1.1, 0.0),
-            end: const Offset(1.0, 0.0),
+            begin: Offset(1.1, 0.0),
+            end: Offset(1.0, 0.0),
           ),
         ],
       ),
@@ -55,8 +59,8 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
             curve: Curves.bounceOut,
             delay: 0.0.ms,
             duration: 200.0.ms,
-            begin: const Offset(1.1, 0.0),
-            end: const Offset(1.0, 0.0),
+            begin: Offset(1.1, 0.0),
+            end: Offset(1.0, 0.0),
           ),
         ],
       ),
@@ -68,8 +72,8 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
             curve: Curves.bounceOut,
             delay: 0.0.ms,
             duration: 200.0.ms,
-            begin: const Offset(1.1, 0.0),
-            end: const Offset(1.0, 0.0),
+            begin: Offset(1.1, 0.0),
+            end: Offset(1.0, 0.0),
           ),
         ],
       ),
@@ -81,8 +85,8 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
             curve: Curves.bounceOut,
             delay: 0.0.ms,
             duration: 200.0.ms,
-            begin: const Offset(1.1, 0.0),
-            end: const Offset(1.0, 0.0),
+            begin: Offset(1.1, 0.0),
+            end: Offset(1.0, 0.0),
           ),
         ],
       ),
@@ -114,23 +118,23 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
         body: Stack(
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
               child: Stack(
                 children: [
                   Container(
                     width: double.infinity,
                     height: 758.0,
-                    decoration: const BoxDecoration(),
+                    decoration: BoxDecoration(),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 30.0, 30.0, 30.0, 30.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
-                              constraints: const BoxConstraints(
+                              constraints: BoxConstraints(
                                 maxWidth: 450.0,
                               ),
                               decoration: BoxDecoration(
@@ -140,7 +144,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                   BoxShadow(
                                     blurRadius: 30.0,
                                     color: FlutterFlowTheme.of(context).primary,
-                                    offset: const Offset(
+                                    offset: Offset(
                                       0.0,
                                       10.0,
                                     ),
@@ -149,7 +153,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                 borderRadius: BorderRadius.circular(40.0),
                               ),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     20.0, 0.0, 30.0, 0.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -160,15 +164,15 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        SizedBox(
+                                        Container(
                                           width: 50.0,
                                           height: 140.0,
                                           child: Stack(
                                             alignment:
-                                                const AlignmentDirectional(0.0, -1.0),
+                                                AlignmentDirectional(0.0, -1.0),
                                             children: [
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 1.0),
                                                 child: Container(
                                                   width: 3.0,
@@ -181,10 +185,10 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 20.0, 0.0, 0.0),
-                                                child: SizedBox(
+                                                child: Container(
                                                   width: 50.0,
                                                   height: 50.0,
                                                   child: Stack(
@@ -195,7 +199,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                         decoration:
                                                             BoxDecoration(
                                                           color:
-                                                              const Color(0xFFFF0000),
+                                                              Color(0xFFFF0000),
                                                           shape:
                                                               BoxShape.circle,
                                                           border: Border.all(
@@ -211,7 +215,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                             Flexible(
                                                               child: Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Icon(
@@ -237,7 +241,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 0.0, 5.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -247,7 +251,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 28.0, 0.0, 0.0),
                                                   child: Text(
@@ -264,7 +268,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 8.0, 0.0, 0.0),
                                                   child: Row(
@@ -280,7 +284,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                       Expanded(
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: InkWell(
                                                             splashColor: Colors
@@ -331,7 +335,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                                         padding:
                                                                             MediaQuery.viewInsetsOf(context),
                                                                         child:
-                                                                            const AddTitleWidget(),
+                                                                            AddTitleWidget(),
                                                                       ),
                                                                     ),
                                                                   );
@@ -342,7 +346,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                             },
                                                             child: Container(
                                                               constraints:
-                                                                  const BoxConstraints(
+                                                                  BoxConstraints(
                                                                 maxWidth: 180.0,
                                                                 maxHeight: double
                                                                     .infinity,
@@ -365,11 +369,11 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           12.0,
@@ -413,7 +417,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 35.0, 0.0, 0.0),
                                           child: Icon(
                                             FFIcons.kpinOutline,
@@ -429,15 +433,15 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        SizedBox(
+                                        Container(
                                           width: 50.0,
                                           height: 140.0,
                                           child: Stack(
                                             alignment:
-                                                const AlignmentDirectional(0.0, -1.0),
+                                                AlignmentDirectional(0.0, -1.0),
                                             children: [
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Container(
                                                   width: 3.0,
@@ -450,10 +454,10 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 20.0, 0.0, 0.0),
-                                                child: SizedBox(
+                                                child: Container(
                                                   width: 50.0,
                                                   height: 50.0,
                                                   child: Stack(
@@ -464,7 +468,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                         decoration:
                                                             BoxDecoration(
                                                           color:
-                                                              const Color(0xFFFF0000),
+                                                              Color(0xFFFF0000),
                                                           shape:
                                                               BoxShape.circle,
                                                           border: Border.all(
@@ -480,7 +484,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                             Flexible(
                                                               child: Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Icon(
@@ -506,7 +510,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 0.0, 5.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -516,7 +520,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 28.0, 0.0, 0.0),
                                                   child: Text(
@@ -533,7 +537,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 8.0, 0.0, 0.0),
                                                   child: Row(
@@ -543,7 +547,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                       Expanded(
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: InkWell(
                                                             splashColor: Colors
@@ -579,7 +583,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                                         padding:
                                                                             MediaQuery.viewInsetsOf(context),
                                                                         child:
-                                                                            const AddTitleWidget(),
+                                                                            AddTitleWidget(),
                                                                       ),
                                                                     ),
                                                                   );
@@ -590,7 +594,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                             },
                                                             child: Container(
                                                               constraints:
-                                                                  const BoxConstraints(
+                                                                  BoxConstraints(
                                                                 maxWidth: 180.0,
                                                                 maxHeight: double
                                                                     .infinity,
@@ -613,11 +617,11 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           12.0,
@@ -661,7 +665,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 35.0, 0.0, 0.0),
                                           child: Icon(
                                             FFIcons.kdocText,
@@ -677,15 +681,15 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        SizedBox(
+                                        Container(
                                           width: 50.0,
                                           height: 140.0,
                                           child: Stack(
                                             alignment:
-                                                const AlignmentDirectional(0.0, -1.0),
+                                                AlignmentDirectional(0.0, -1.0),
                                             children: [
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, -1.0),
                                                 child: Container(
                                                   width: 3.0,
@@ -698,7 +702,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                 ),
                                               ),
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 1.0),
                                                 child: Container(
                                                   width: 3.0,
@@ -711,10 +715,10 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 20.0, 0.0, 0.0),
-                                                child: SizedBox(
+                                                child: Container(
                                                   width: 50.0,
                                                   height: 50.0,
                                                   child: Stack(
@@ -725,7 +729,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                         decoration:
                                                             BoxDecoration(
                                                           color:
-                                                              const Color(0xFFFF0000),
+                                                              Color(0xFFFF0000),
                                                           shape:
                                                               BoxShape.circle,
                                                           border: Border.all(
@@ -741,7 +745,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                             Flexible(
                                                               child: Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Icon(
@@ -767,7 +771,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 0.0, 5.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -777,7 +781,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 28.0, 0.0, 0.0),
                                                   child: Text(
@@ -794,7 +798,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 8.0, 0.0, 0.0),
                                                   child: Row(
@@ -804,7 +808,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                       Expanded(
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: InkWell(
                                                             splashColor: Colors
@@ -855,7 +859,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                                         padding:
                                                                             MediaQuery.viewInsetsOf(context),
                                                                         child:
-                                                                            const AddTitleWidget(),
+                                                                            AddTitleWidget(),
                                                                       ),
                                                                     ),
                                                                   );
@@ -866,7 +870,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                             },
                                                             child: Container(
                                                               constraints:
-                                                                  const BoxConstraints(
+                                                                  BoxConstraints(
                                                                 maxWidth: 180.0,
                                                                 maxHeight: double
                                                                     .infinity,
@@ -889,11 +893,11 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           12.0,
@@ -937,7 +941,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 35.0, 0.0, 0.0),
                                           child: Icon(
                                             Icons.color_lens_outlined,
@@ -953,15 +957,15 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        SizedBox(
+                                        Container(
                                           width: 50.0,
                                           height: 183.0,
                                           child: Stack(
                                             alignment:
-                                                const AlignmentDirectional(0.0, -1.0),
+                                                AlignmentDirectional(0.0, -1.0),
                                             children: [
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, -1.0),
                                                 child: Container(
                                                   width: 3.0,
@@ -974,7 +978,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                 ),
                                               ),
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 1.0),
                                                 child: Container(
                                                   width: 3.0,
@@ -987,10 +991,10 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 20.0, 0.0, 0.0),
-                                                child: SizedBox(
+                                                child: Container(
                                                   width: 50.0,
                                                   height: 50.0,
                                                   child: Stack(
@@ -1001,7 +1005,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                         decoration:
                                                             BoxDecoration(
                                                           color:
-                                                              const Color(0xFFFF0000),
+                                                              Color(0xFFFF0000),
                                                           shape:
                                                               BoxShape.circle,
                                                           border: Border.all(
@@ -1017,7 +1021,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                             Flexible(
                                                               child: Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Icon(
@@ -1043,7 +1047,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 0.0, 5.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -1053,7 +1057,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 28.0, 0.0, 0.0),
                                                   child: Text(
@@ -1070,7 +1074,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 8.0, 0.0, 0.0),
                                                   child: Row(
@@ -1080,7 +1084,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                       Expanded(
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: InkWell(
                                                             splashColor: Colors
@@ -1131,7 +1135,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                                         padding:
                                                                             MediaQuery.viewInsetsOf(context),
                                                                         child:
-                                                                            const AddTitleWidget(),
+                                                                            AddTitleWidget(),
                                                                       ),
                                                                     ),
                                                                   );
@@ -1142,7 +1146,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                             },
                                                             child: Container(
                                                               constraints:
-                                                                  const BoxConstraints(
+                                                                  BoxConstraints(
                                                                 maxWidth: 180.0,
                                                                 maxHeight: double
                                                                     .infinity,
@@ -1165,11 +1169,11 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                               ),
                                                               child: Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           12.0,
@@ -1213,7 +1217,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 35.0, 0.0, 0.0),
                                           child: Icon(
                                             Icons.image_search,
@@ -1229,19 +1233,19 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        SizedBox(
+                                        Container(
                                           width: 50.0,
                                           height: 45.0,
                                           child: Stack(
                                             alignment:
-                                                const AlignmentDirectional(0.0, -1.0),
+                                                AlignmentDirectional(0.0, -1.0),
                                             children: [
                                               Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, -1.0),
                                                     child: Container(
                                                       width: 3.0,
@@ -1257,7 +1261,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                 ],
                                               ),
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Container(
                                                   width: 25.0,
@@ -1282,7 +1286,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 0.0, 5.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.min,
@@ -1295,7 +1299,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                   width: double.infinity,
                                                   height: 40.0,
                                                   decoration: BoxDecoration(
-                                                    color: const Color(0x76257AFD),
+                                                    color: Color(0x76257AFD),
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             50.0),
@@ -1308,7 +1312,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
                                                                 16.0, 0.0),
                                                     child: Row(
@@ -1348,7 +1352,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                                               ),
                                                         ),
                                                       ].divide(
-                                                          const SizedBox(width: 8.0)),
+                                                          SizedBox(width: 8.0)),
                                                     ),
                                                   ),
                                                 ),
@@ -1358,12 +1362,12 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
                                         ),
                                       ],
                                     ),
-                                  ].addToEnd(const SizedBox(height: 50.0)),
+                                  ].addToEnd(SizedBox(height: 50.0)),
                                 ),
                               ),
                             ),
                           ),
-                        ].addToEnd(const SizedBox(height: 120.0)),
+                        ].addToEnd(SizedBox(height: 120.0)),
                       ),
                     ),
                   ),
@@ -1373,7 +1377,7 @@ class _SubmitPromptWidgetState extends State<SubmitPromptWidget>
             wrapWithModel(
               model: _model.navBarModel,
               updateCallback: () => setState(() {}),
-              child: const NavBarWidget(
+              child: NavBarWidget(
                 activePage: 3,
               ),
             ),

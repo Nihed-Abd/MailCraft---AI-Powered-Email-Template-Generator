@@ -3,9 +3,14 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/generating_loading/generating_loading_widget.dart';
+import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'submitis_ready_model.dart';
 export 'submitis_ready_model.dart';
@@ -59,8 +64,8 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
             curve: Curves.bounceOut,
             delay: 0.0.ms,
             duration: 200.0.ms,
-            begin: const Offset(1.1, 0.0),
-            end: const Offset(1.0, 0.0),
+            begin: Offset(1.1, 0.0),
+            end: Offset(1.0, 0.0),
           ),
         ],
       ),
@@ -72,8 +77,8 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
             curve: Curves.bounceOut,
             delay: 0.0.ms,
             duration: 200.0.ms,
-            begin: const Offset(1.1, 0.0),
-            end: const Offset(1.0, 0.0),
+            begin: Offset(1.1, 0.0),
+            end: Offset(1.0, 0.0),
           ),
         ],
       ),
@@ -103,7 +108,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         body: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+          padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
           child: Stack(
             children: [
               SingleChildScrollView(
@@ -111,11 +116,11 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
+                      padding: EdgeInsetsDirectional.fromSTEB(
                           30.0, 30.0, 30.0, 30.0),
                       child: Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
-                        constraints: const BoxConstraints(
+                        constraints: BoxConstraints(
                           maxWidth: 450.0,
                         ),
                         decoration: BoxDecoration(
@@ -125,7 +130,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                             BoxShadow(
                               blurRadius: 30.0,
                               color: FlutterFlowTheme.of(context).primary,
-                              offset: const Offset(
+                              offset: Offset(
                                 0.0,
                                 10.0,
                               ),
@@ -134,7 +139,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                           borderRadius: BorderRadius.circular(40.0),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 30.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -144,16 +149,16 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  SizedBox(
+                                  Container(
                                     width: 50.0,
                                     height: 140.0,
                                     child: Stack(
                                       alignment:
-                                          const AlignmentDirectional(0.0, -1.0),
+                                          AlignmentDirectional(0.0, -1.0),
                                       children: [
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 1.0),
+                                              AlignmentDirectional(0.0, 1.0),
                                           child: Container(
                                             width: 3.0,
                                             height: 80.0,
@@ -166,9 +171,9 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 20.0, 0.0, 0.0),
-                                          child: SizedBox(
+                                          child: Container(
                                             width: 50.0,
                                             height: 50.0,
                                             child: Stack(
@@ -177,7 +182,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                                   width: 50.0,
                                                   height: 50.0,
                                                   decoration: BoxDecoration(
-                                                    color: const Color(0xFF03FF00),
+                                                    color: Color(0xFF03FF00),
                                                     shape: BoxShape.circle,
                                                     border: Border.all(
                                                       color:
@@ -193,7 +198,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                                       Flexible(
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Icon(
                                                             FFIcons.kok,
@@ -216,7 +221,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                   ),
                                   Expanded(
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 5.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -227,7 +232,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 28.0, 0.0, 0.0),
                                             child: Text(
                                               'Title',
@@ -244,7 +249,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 8.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -256,11 +261,11 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                                 Expanded(
                                                   child: Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Container(
                                                       constraints:
-                                                          const BoxConstraints(
+                                                          BoxConstraints(
                                                         maxWidth: 180.0,
                                                         maxHeight:
                                                             double.infinity,
@@ -280,11 +285,11 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       10.0,
                                                                       12.0,
@@ -293,7 +298,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                                           child: Text(
                                                             valueOrDefault<
                                                                 String>(
-                                                              widget.title,
+                                                              widget!.title,
                                                               'null',
                                                             ),
                                                             textAlign: TextAlign
@@ -330,7 +335,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 35.0, 0.0, 0.0),
                                     child: Icon(
                                       FFIcons.kpinOutline,
@@ -345,16 +350,16 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  SizedBox(
+                                  Container(
                                     width: 50.0,
                                     height: 140.0,
                                     child: Stack(
                                       alignment:
-                                          const AlignmentDirectional(0.0, -1.0),
+                                          AlignmentDirectional(0.0, -1.0),
                                       children: [
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Container(
                                             width: 3.0,
                                             height: double.infinity,
@@ -367,9 +372,9 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 20.0, 0.0, 0.0),
-                                          child: SizedBox(
+                                          child: Container(
                                             width: 50.0,
                                             height: 50.0,
                                             child: Stack(
@@ -378,7 +383,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                                   width: 50.0,
                                                   height: 50.0,
                                                   decoration: BoxDecoration(
-                                                    color: const Color(0xFF03FF00),
+                                                    color: Color(0xFF03FF00),
                                                     shape: BoxShape.circle,
                                                     border: Border.all(
                                                       color:
@@ -394,7 +399,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                                       Flexible(
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Icon(
                                                             FFIcons.kok,
@@ -417,7 +422,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                   ),
                                   Expanded(
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 5.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -428,7 +433,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 28.0, 0.0, 0.0),
                                             child: Text(
                                               'Category',
@@ -445,7 +450,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 8.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -453,11 +458,11 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                                 Expanded(
                                                   child: Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Container(
                                                       constraints:
-                                                          const BoxConstraints(
+                                                          BoxConstraints(
                                                         maxWidth: 180.0,
                                                         maxHeight:
                                                             double.infinity,
@@ -477,11 +482,11 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       10.0,
                                                                       12.0,
@@ -490,7 +495,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                                           child: Text(
                                                             valueOrDefault<
                                                                 String>(
-                                                              widget.category,
+                                                              widget!.category,
                                                               'null',
                                                             ),
                                                             textAlign: TextAlign
@@ -527,7 +532,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 35.0, 0.0, 0.0),
                                     child: Icon(
                                       FFIcons.kdocText,
@@ -542,16 +547,16 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  SizedBox(
+                                  Container(
                                     width: 50.0,
                                     height: 140.0,
                                     child: Stack(
                                       alignment:
-                                          const AlignmentDirectional(0.0, -1.0),
+                                          AlignmentDirectional(0.0, -1.0),
                                       children: [
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, -1.0),
+                                              AlignmentDirectional(0.0, -1.0),
                                           child: Container(
                                             width: 3.0,
                                             height: 20.0,
@@ -564,7 +569,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 1.0),
+                                              AlignmentDirectional(0.0, 1.0),
                                           child: Container(
                                             width: 3.0,
                                             height: 120.0,
@@ -577,9 +582,9 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 20.0, 0.0, 0.0),
-                                          child: SizedBox(
+                                          child: Container(
                                             width: 50.0,
                                             height: 50.0,
                                             child: Stack(
@@ -588,7 +593,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                                   width: 50.0,
                                                   height: 50.0,
                                                   decoration: BoxDecoration(
-                                                    color: const Color(0xFF03FF00),
+                                                    color: Color(0xFF03FF00),
                                                     shape: BoxShape.circle,
                                                     border: Border.all(
                                                       color:
@@ -604,7 +609,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                                       Flexible(
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Icon(
                                                             FFIcons.kok,
@@ -627,7 +632,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                   ),
                                   Expanded(
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 5.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -638,7 +643,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 28.0, 0.0, 0.0),
                                             child: Text(
                                               'Color Scheme',
@@ -655,9 +660,9 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                           ),
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 20.0, 0.0, 0.0),
                                               child: Row(
@@ -671,7 +676,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                                     borderRadius: 25.0,
                                                     borderWidth: 1.0,
                                                     buttonSize: 50.0,
-                                                    fillColor: widget.color1,
+                                                    fillColor: widget!.color1,
                                                     icon: Icon(
                                                       Icons.color_lens,
                                                       color:
@@ -692,7 +697,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                                     borderRadius: 25.0,
                                                     borderWidth: 1.0,
                                                     buttonSize: 50.0,
-                                                    fillColor: widget.color2,
+                                                    fillColor: widget!.color2,
                                                     icon: Icon(
                                                       Icons.color_lens,
                                                       color:
@@ -713,7 +718,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                                     borderRadius: 25.0,
                                                     borderWidth: 1.0,
                                                     buttonSize: 50.0,
-                                                    fillColor: widget.color3,
+                                                    fillColor: widget!.color3,
                                                     icon: Icon(
                                                       Icons.color_lens,
                                                       color:
@@ -726,7 +731,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                                           'IconButton pressed ...');
                                                     },
                                                   ),
-                                                ].divide(const SizedBox(width: 10.0)),
+                                                ].divide(SizedBox(width: 10.0)),
                                               ),
                                             ),
                                           ),
@@ -735,7 +740,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 35.0, 0.0, 0.0),
                                     child: Icon(
                                       Icons.color_lens_outlined,
@@ -750,16 +755,16 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  SizedBox(
+                                  Container(
                                     width: 50.0,
                                     height: 183.0,
                                     child: Stack(
                                       alignment:
-                                          const AlignmentDirectional(0.0, -1.0),
+                                          AlignmentDirectional(0.0, -1.0),
                                       children: [
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, -1.0),
+                                              AlignmentDirectional(0.0, -1.0),
                                           child: Container(
                                             width: 3.0,
                                             height: 20.0,
@@ -772,7 +777,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 1.0),
+                                              AlignmentDirectional(0.0, 1.0),
                                           child: Container(
                                             width: 3.0,
                                             height: 120.0,
@@ -785,9 +790,9 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 20.0, 0.0, 0.0),
-                                          child: SizedBox(
+                                          child: Container(
                                             width: 50.0,
                                             height: 50.0,
                                             child: Stack(
@@ -796,7 +801,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                                   width: 50.0,
                                                   height: 50.0,
                                                   decoration: BoxDecoration(
-                                                    color: const Color(0xFF03FF00),
+                                                    color: Color(0xFF03FF00),
                                                     shape: BoxShape.circle,
                                                     border: Border.all(
                                                       color:
@@ -812,7 +817,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                                       Flexible(
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Icon(
                                                             FFIcons.kok,
@@ -835,7 +840,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                   ),
                                   Expanded(
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 5.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -846,7 +851,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 28.0, 0.0, 0.0),
                                             child: Text(
                                               'Logo',
@@ -863,25 +868,25 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 8.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Container(
                                                     width: 179.0,
                                                     height: 106.0,
-                                                    decoration: const BoxDecoration(),
+                                                    decoration: BoxDecoration(),
                                                     child: ClipRRect(
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               8.0),
                                                       child: Image.network(
-                                                        widget.imagePath!,
+                                                        widget!.imagePath!,
                                                         width: 300.0,
                                                         height: 200.0,
                                                         fit: BoxFit.cover,
@@ -897,7 +902,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 35.0, 0.0, 0.0),
                                     child: Icon(
                                       Icons.image_search,
@@ -912,18 +917,18 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  SizedBox(
+                                  Container(
                                     width: 50.0,
                                     height: 45.0,
                                     child: Stack(
                                       alignment:
-                                          const AlignmentDirectional(0.0, -1.0),
+                                          AlignmentDirectional(0.0, -1.0),
                                       children: [
                                         Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   0.0, -1.0),
                                               child: Container(
                                                 width: 3.0,
@@ -939,7 +944,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Container(
                                             width: 25.0,
                                             height: 25.0,
@@ -961,7 +966,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                   ),
                                   Expanded(
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 5.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -994,20 +999,20 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                                                 context),
                                                         child:
                                                             GeneratingLoadingWidget(
-                                                          title: widget.title!,
-                                                          description: widget
+                                                          title: widget!.title!,
+                                                          description: widget!
                                                               .description!,
                                                           color1:
-                                                              widget.color1!,
+                                                              widget!.color1!,
                                                           color2:
-                                                              widget.color2!,
+                                                              widget!.color2!,
                                                           color3:
-                                                              widget.color3!,
-                                                          imagepath: widget
+                                                              widget!.color3!,
+                                                          imagepath: widget!
                                                               .imagePath!,
                                                           category:
-                                                              widget.category!,
-                                                          image: widget.image!,
+                                                              widget!.category!,
+                                                          image: widget!.image!,
                                                         ),
                                                       ),
                                                     ),
@@ -1020,7 +1025,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                               width: 254.0,
                                               height: 56.0,
                                               decoration: BoxDecoration(
-                                                color: const Color(0x7A257AFD),
+                                                color: Color(0x7A257AFD),
                                                 borderRadius:
                                                     BorderRadius.circular(50.0),
                                                 border: Border.all(
@@ -1030,7 +1035,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 child: Row(
@@ -1067,7 +1072,7 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                                           ),
                                                     ),
                                                   ].divide(
-                                                      const SizedBox(width: 8.0)),
+                                                      SizedBox(width: 8.0)),
                                                 ),
                                               ),
                                             ),
@@ -1078,18 +1083,18 @@ class _SubmitisReadyWidgetState extends State<SubmitisReadyWidget>
                                   ),
                                 ],
                               ),
-                            ].addToEnd(const SizedBox(height: 50.0)),
+                            ].addToEnd(SizedBox(height: 50.0)),
                           ),
                         ),
                       ),
                     ),
-                  ].addToEnd(const SizedBox(height: 120.0)),
+                  ].addToEnd(SizedBox(height: 120.0)),
                 ),
               ),
               wrapWithModel(
                 model: _model.navBarModel,
                 updateCallback: () => setState(() {}),
-                child: const NavBarWidget(
+                child: NavBarWidget(
                   activePage: 3,
                 ),
               ),

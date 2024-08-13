@@ -4,10 +4,13 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'rating_app_model.dart';
 export 'rating_app_model.dart';
 
@@ -52,7 +55,7 @@ class _RatingAppWidgetState extends State<RatingAppWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Container(
         width: 340.0,
         decoration: BoxDecoration(
@@ -63,12 +66,12 @@ class _RatingAppWidgetState extends State<RatingAppWidget> {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
+          padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               Align(
-                alignment: const AlignmentDirectional(1.0, 0.0),
+                alignment: AlignmentDirectional(1.0, 0.0),
                 child: FlutterFlowIconButton(
                   borderColor: FlutterFlowTheme.of(context).primaryText,
                   borderRadius: 30.0,
@@ -86,7 +89,7 @@ class _RatingAppWidgetState extends State<RatingAppWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 0.0, 0.0),
                 child: Text(
                   'Did you like the Template ?',
                   textAlign: TextAlign.center,
@@ -99,7 +102,7 @@ class _RatingAppWidgetState extends State<RatingAppWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 0.0, 0.0),
                 child: InkWell(
                   splashColor: Colors.transparent,
                   focusColor: Colors.transparent,
@@ -122,7 +125,7 @@ class _RatingAppWidgetState extends State<RatingAppWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                 child: Stack(
                   children: [
                     Row(
@@ -131,7 +134,7 @@ class _RatingAppWidgetState extends State<RatingAppWidget> {
                       children: [
                         Flexible(
                           child: Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: RatingBar.builder(
                               onRatingUpdate: (newValue) => setState(
                                   () => _model.ratingBarValue = newValue),
@@ -141,7 +144,7 @@ class _RatingAppWidgetState extends State<RatingAppWidget> {
                               ),
                               direction: Axis.horizontal,
                               initialRating: _model.ratingBarValue ??= 3.0,
-                              unratedColor: const Color(0x60257AFD),
+                              unratedColor: Color(0x60257AFD),
                               itemCount: 5,
                               itemSize: 50.0,
                               glowColor: FlutterFlowTheme.of(context).primary,
@@ -154,12 +157,12 @@ class _RatingAppWidgetState extends State<RatingAppWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     HapticFeedback.lightImpact();
 
-                    await LikesRecord.createDoc(widget.id!)
+                    await LikesRecord.createDoc(widget!.id!)
                         .set(createLikesRecordData(
                       likes: _model.ratingBarValue?.round(),
                       user: currentUserReference,
@@ -167,16 +170,16 @@ class _RatingAppWidgetState extends State<RatingAppWidget> {
                     Navigator.pop(context);
                   },
                   text: 'Submit',
-                  icon: const Icon(
+                  icon: Icon(
                     Icons.stars_rounded,
                     size: 25.0,
                   ),
                   options: FFButtonOptions(
                     width: double.infinity,
                     height: 55.0,
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',
@@ -186,7 +189,7 @@ class _RatingAppWidgetState extends State<RatingAppWidget> {
                           fontWeight: FontWeight.w600,
                         ),
                     elevation: 0.0,
-                    borderSide: const BorderSide(
+                    borderSide: BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),
@@ -195,7 +198,7 @@ class _RatingAppWidgetState extends State<RatingAppWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 0.0),
                 child: InkWell(
                   splashColor: Colors.transparent,
                   focusColor: Colors.transparent,

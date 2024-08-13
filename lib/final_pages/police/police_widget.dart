@@ -1,8 +1,12 @@
 import '/components/poilice/poilice_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'police_model.dart';
 export 'police_model.dart';
 
@@ -48,7 +52,7 @@ class _PoliceWidgetState extends State<PoliceWidget> {
               children: [
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(24.0, 30.0, 24.0, 0.0),
+                      EdgeInsetsDirectional.fromSTEB(24.0, 30.0, 24.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -66,7 +70,7 @@ class _PoliceWidgetState extends State<PoliceWidget> {
                           height: 50.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).primary,
-                            borderRadius: const BorderRadius.only(
+                            borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(40.0),
                               bottomRight: Radius.circular(40.0),
                               topLeft: Radius.circular(40.0),
@@ -77,7 +81,7 @@ class _PoliceWidgetState extends State<PoliceWidget> {
                               color: FlutterFlowTheme.of(context).primaryText,
                             ),
                           ),
-                          child: const Icon(
+                          child: Icon(
                             Icons.arrow_back_ios_outlined,
                             color: Colors.white,
                             size: 25.0,
@@ -88,15 +92,15 @@ class _PoliceWidgetState extends State<PoliceWidget> {
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 0.75),
+                  alignment: AlignmentDirectional(0.0, 0.75),
                   child: Container(
                     width: 342.1,
                     height: 388.3,
-                    decoration: const BoxDecoration(),
+                    decoration: BoxDecoration(),
                     child: wrapWithModel(
                       model: _model.poiliceModel,
                       updateCallback: () => setState(() {}),
-                      child: const PoiliceWidget(),
+                      child: PoiliceWidget(),
                     ),
                   ),
                 ),
@@ -121,7 +125,7 @@ class _PoliceWidgetState extends State<PoliceWidget> {
                     ),
                     Flexible(
                       child: Align(
-                        alignment: const AlignmentDirectional(-1.0, 0.0),
+                        alignment: AlignmentDirectional(-1.0, 0.0),
                         child: Text(
                           'Privacy & Policy\n',
                           style:
@@ -139,12 +143,12 @@ class _PoliceWidgetState extends State<PoliceWidget> {
                 Container(
                   width: double.infinity,
                   height: 1013.0,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     color: Colors.transparent,
                   ),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -153,7 +157,7 @@ class _PoliceWidgetState extends State<PoliceWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 20.0, 0.0),
                               child: FaIcon(
                                 FontAwesomeIcons.database,
@@ -195,7 +199,7 @@ class _PoliceWidgetState extends State<PoliceWidget> {
                                             letterSpacing: 0.0,
                                           ),
                                     ),
-                                    const TextSpan(
+                                    TextSpan(
                                       text: '',
                                       style: TextStyle(),
                                     )
@@ -216,7 +220,7 @@ class _PoliceWidgetState extends State<PoliceWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 20.0, 0.0),
                               child: Icon(
                                 FFIcons.kinfo,
@@ -258,7 +262,7 @@ class _PoliceWidgetState extends State<PoliceWidget> {
                                             letterSpacing: 0.0,
                                           ),
                                     ),
-                                    const TextSpan(
+                                    TextSpan(
                                       text: '',
                                       style: TextStyle(),
                                     )
@@ -279,7 +283,7 @@ class _PoliceWidgetState extends State<PoliceWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 20.0, 0.0),
                               child: Icon(
                                 Icons.share_outlined,
@@ -321,7 +325,7 @@ class _PoliceWidgetState extends State<PoliceWidget> {
                                             letterSpacing: 0.0,
                                           ),
                                     ),
-                                    const TextSpan(
+                                    TextSpan(
                                       text: '',
                                       style: TextStyle(),
                                     )
@@ -342,7 +346,7 @@ class _PoliceWidgetState extends State<PoliceWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 20.0, 0.0),
                               child: Icon(
                                 FFIcons.klockFilled,
@@ -384,7 +388,7 @@ class _PoliceWidgetState extends State<PoliceWidget> {
                                             letterSpacing: 0.0,
                                           ),
                                     ),
-                                    const TextSpan(
+                                    TextSpan(
                                       text: '',
                                       style: TextStyle(),
                                     )
@@ -405,7 +409,7 @@ class _PoliceWidgetState extends State<PoliceWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 20.0, 0.0),
                               child: FaIcon(
                                 FontAwesomeIcons.balanceScaleRight,
@@ -447,7 +451,7 @@ class _PoliceWidgetState extends State<PoliceWidget> {
                                             letterSpacing: 0.0,
                                           ),
                                     ),
-                                    const TextSpan(
+                                    TextSpan(
                                       text: '',
                                       style: TextStyle(),
                                     )
@@ -468,7 +472,7 @@ class _PoliceWidgetState extends State<PoliceWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 20.0, 0.0),
                               child: Icon(
                                 FFIcons.kflowMerge,
@@ -510,7 +514,7 @@ class _PoliceWidgetState extends State<PoliceWidget> {
                                             letterSpacing: 0.0,
                                           ),
                                     ),
-                                    const TextSpan(
+                                    TextSpan(
                                       text: '',
                                       style: TextStyle(),
                                     )
@@ -527,7 +531,7 @@ class _PoliceWidgetState extends State<PoliceWidget> {
                             ),
                           ],
                         ),
-                      ].divide(const SizedBox(height: 12.0)),
+                      ].divide(SizedBox(height: 12.0)),
                     ),
                   ),
                 ),

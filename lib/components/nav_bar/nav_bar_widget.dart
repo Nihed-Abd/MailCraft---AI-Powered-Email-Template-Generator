@@ -3,10 +3,14 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'nav_bar_model.dart';
 export 'nav_bar_model.dart';
@@ -70,15 +74,15 @@ class _NavBarWidgetState extends State<NavBarWidget>
             curve: Curves.easeInOut,
             delay: 3000.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 0.0),
-            end: const Offset(0.0, -5.0),
+            begin: Offset(0.0, 0.0),
+            end: Offset(0.0, -5.0),
           ),
           MoveEffect(
             curve: Curves.easeInOut,
             delay: 4200.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 0.0),
-            end: const Offset(0.0, 5.0),
+            begin: Offset(0.0, 0.0),
+            end: Offset(0.0, 5.0),
           ),
         ],
       ),
@@ -111,15 +115,15 @@ class _NavBarWidgetState extends State<NavBarWidget>
             curve: Curves.easeInOut,
             delay: 3000.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 0.0),
-            end: const Offset(0.0, -5.0),
+            begin: Offset(0.0, 0.0),
+            end: Offset(0.0, -5.0),
           ),
           MoveEffect(
             curve: Curves.easeInOut,
             delay: 4200.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 0.0),
-            end: const Offset(0.0, 5.0),
+            begin: Offset(0.0, 0.0),
+            end: Offset(0.0, 5.0),
           ),
         ],
       ),
@@ -138,8 +142,8 @@ class _NavBarWidgetState extends State<NavBarWidget>
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 1.0),
-      child: SizedBox(
+      alignment: AlignmentDirectional(0.0, 1.0),
+      child: Container(
         height: 121.0,
         child: Stack(
           children: [
@@ -147,7 +151,7 @@ class _NavBarWidgetState extends State<NavBarWidget>
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                   child: Container(
                     width: double.infinity,
                     height: 1.0,
@@ -163,10 +167,10 @@ class _NavBarWidgetState extends State<NavBarWidget>
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
                   child: Align(
-                    alignment: const AlignmentDirectional(0.0, -1.0),
+                    alignment: AlignmentDirectional(0.0, -1.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -183,7 +187,7 @@ class _NavBarWidgetState extends State<NavBarWidget>
                                 context.goNamed(
                                   'HomePage',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                       duration: Duration(milliseconds: 0),
@@ -196,7 +200,7 @@ class _NavBarWidgetState extends State<NavBarWidget>
                                 children: [
                                   Icon(
                                     FFIcons.khome,
-                                    color: widget.activePage == 1
+                                    color: widget!.activePage == 1
                                         ? FlutterFlowTheme.of(context).primary
                                         : FlutterFlowTheme.of(context)
                                             .secondaryText,
@@ -208,7 +212,7 @@ class _NavBarWidgetState extends State<NavBarWidget>
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Inter',
-                                          color: widget.activePage == 1
+                                          color: widget!.activePage == 1
                                               ? FlutterFlowTheme.of(context)
                                                   .primary
                                               : FlutterFlowTheme.of(context)
@@ -218,9 +222,9 @@ class _NavBarWidgetState extends State<NavBarWidget>
                                         ),
                                   ),
                                 ]
-                                    .divide(const SizedBox(height: 6.0))
-                                    .addToStart(const SizedBox(height: 12.0))
-                                    .addToEnd(const SizedBox(height: 12.0)),
+                                    .divide(SizedBox(height: 6.0))
+                                    .addToStart(SizedBox(height: 12.0))
+                                    .addToEnd(SizedBox(height: 12.0)),
                               ),
                             ),
                           ),
@@ -236,7 +240,7 @@ class _NavBarWidgetState extends State<NavBarWidget>
                                 context.goNamed(
                                   'Reviews',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                       duration: Duration(milliseconds: 0),
@@ -249,7 +253,7 @@ class _NavBarWidgetState extends State<NavBarWidget>
                                 children: [
                                   Icon(
                                     FFIcons.kstarFilled,
-                                    color: widget.activePage == 2
+                                    color: widget!.activePage == 2
                                         ? FlutterFlowTheme.of(context).primary
                                         : FlutterFlowTheme.of(context)
                                             .secondaryText,
@@ -261,7 +265,7 @@ class _NavBarWidgetState extends State<NavBarWidget>
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Inter',
-                                          color: widget.activePage == 2
+                                          color: widget!.activePage == 2
                                               ? FlutterFlowTheme.of(context)
                                                   .primary
                                               : FlutterFlowTheme.of(context)
@@ -271,16 +275,16 @@ class _NavBarWidgetState extends State<NavBarWidget>
                                         ),
                                   ),
                                 ]
-                                    .divide(const SizedBox(height: 6.0))
-                                    .addToStart(const SizedBox(height: 12.0))
-                                    .addToEnd(const SizedBox(height: 12.0)),
+                                    .divide(SizedBox(height: 6.0))
+                                    .addToStart(SizedBox(height: 12.0))
+                                    .addToEnd(SizedBox(height: 12.0)),
                               ),
                             ),
                           ),
                           Expanded(
                             child: Container(
                               height: 40.0,
-                              decoration: const BoxDecoration(),
+                              decoration: BoxDecoration(),
                             ),
                           ),
                           Expanded(
@@ -295,7 +299,7 @@ class _NavBarWidgetState extends State<NavBarWidget>
                                 context.goNamed(
                                   'History',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                       duration: Duration(milliseconds: 0),
@@ -308,7 +312,7 @@ class _NavBarWidgetState extends State<NavBarWidget>
                                 children: [
                                   FaIcon(
                                     FontAwesomeIcons.history,
-                                    color: widget.activePage == 4
+                                    color: widget!.activePage == 4
                                         ? FlutterFlowTheme.of(context).primary
                                         : FlutterFlowTheme.of(context)
                                             .secondaryText,
@@ -320,7 +324,7 @@ class _NavBarWidgetState extends State<NavBarWidget>
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Inter',
-                                          color: widget.activePage == 4
+                                          color: widget!.activePage == 4
                                               ? FlutterFlowTheme.of(context)
                                                   .primary
                                               : FlutterFlowTheme.of(context)
@@ -330,9 +334,9 @@ class _NavBarWidgetState extends State<NavBarWidget>
                                         ),
                                   ),
                                 ]
-                                    .divide(const SizedBox(height: 6.0))
-                                    .addToStart(const SizedBox(height: 12.0))
-                                    .addToEnd(const SizedBox(height: 12.0)),
+                                    .divide(SizedBox(height: 6.0))
+                                    .addToStart(SizedBox(height: 12.0))
+                                    .addToEnd(SizedBox(height: 12.0)),
                               ),
                             ),
                           ),
@@ -348,7 +352,7 @@ class _NavBarWidgetState extends State<NavBarWidget>
                                 context.goNamed(
                                   'Profile',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                       duration: Duration(milliseconds: 0),
@@ -361,7 +365,7 @@ class _NavBarWidgetState extends State<NavBarWidget>
                                 children: [
                                   Icon(
                                     FFIcons.kuser,
-                                    color: widget.activePage == 5
+                                    color: widget!.activePage == 5
                                         ? FlutterFlowTheme.of(context).primary
                                         : FlutterFlowTheme.of(context)
                                             .secondaryText,
@@ -373,7 +377,7 @@ class _NavBarWidgetState extends State<NavBarWidget>
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Inter',
-                                          color: widget.activePage == 5
+                                          color: widget!.activePage == 5
                                               ? FlutterFlowTheme.of(context)
                                                   .primary
                                               : FlutterFlowTheme.of(context)
@@ -383,9 +387,9 @@ class _NavBarWidgetState extends State<NavBarWidget>
                                         ),
                                   ),
                                 ]
-                                    .divide(const SizedBox(height: 6.0))
-                                    .addToStart(const SizedBox(height: 12.0))
-                                    .addToEnd(const SizedBox(height: 12.0)),
+                                    .divide(SizedBox(height: 6.0))
+                                    .addToStart(SizedBox(height: 12.0))
+                                    .addToEnd(SizedBox(height: 12.0)),
                               ),
                             ),
                           ),
@@ -396,9 +400,9 @@ class _NavBarWidgetState extends State<NavBarWidget>
                 ),
               ],
             ),
-            if (widget.activePage == 3)
+            if (widget!.activePage == 3)
               Align(
-                alignment: const AlignmentDirectional(0.0, -1.0),
+                alignment: AlignmentDirectional(0.0, -1.0),
                 child: FlutterFlowIconButton(
                   borderColor: Colors.transparent,
                   borderRadius: 12.0,
@@ -420,7 +424,7 @@ class _NavBarWidgetState extends State<NavBarWidget>
                         return WebViewAware(
                           child: Padding(
                             padding: MediaQuery.viewInsetsOf(context),
-                            child: const AlertGenerationWidget(),
+                            child: AlertGenerationWidget(),
                           ),
                         );
                       },
@@ -429,9 +433,9 @@ class _NavBarWidgetState extends State<NavBarWidget>
                 ).animateOnPageLoad(
                     animationsMap['iconButtonOnPageLoadAnimation1']!),
               ),
-            if (widget.activePage != 3)
+            if (widget!.activePage != 3)
               Align(
-                alignment: const AlignmentDirectional(0.0, -1.0),
+                alignment: AlignmentDirectional(0.0, -1.0),
                 child: FlutterFlowIconButton(
                   borderColor: Colors.transparent,
                   borderRadius: 12.0,

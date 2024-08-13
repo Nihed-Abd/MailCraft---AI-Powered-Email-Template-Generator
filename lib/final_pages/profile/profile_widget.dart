@@ -9,6 +9,8 @@ import '/pages/share_my_app/share_my_app_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'profile_model.dart';
 export 'profile_model.dart';
@@ -67,8 +69,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           (Theme.of(context).brightness == Brightness.light) ==
                               true,
                       onChanged: (newValue) async {
-                        setState(() => _model.switchValue = newValue);
-                        if (newValue) {
+                        setState(() => _model.switchValue = newValue!);
+                        if (newValue!) {
                           HapticFeedback.selectionClick();
                           setDarkModeSetting(context, ThemeMode.light);
                         } else {
@@ -88,16 +90,16 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                       color: FlutterFlowTheme.of(context).secondaryText,
                       size: 24.0,
                     ),
-                  ].divide(const SizedBox(width: 6.0)),
+                  ].divide(SizedBox(width: 6.0)),
                 ),
-              ].divide(const SizedBox(width: 8.0)),
+              ].divide(SizedBox(width: 8.0)),
             ),
           ],
           centerTitle: false,
           elevation: 0.0,
         ),
         body: Align(
-          alignment: const AlignmentDirectional(0.0, 1.0),
+          alignment: AlignmentDirectional(0.0, 1.0),
           child: Stack(
             children: [
               Column(
@@ -138,9 +140,10 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                 ),
                               ),
                               child: Visibility(
-                                visible: currentUserPhoto == '',
+                                visible: currentUserPhoto == null ||
+                                    currentUserPhoto == '',
                                 child: Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Icon(
                                     Icons.person_outline_outlined,
                                     color: FlutterFlowTheme.of(context)
@@ -181,7 +184,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                     ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     14.0, 8.0, 14.0, 8.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
@@ -192,7 +195,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                         color: currentUserEmailVerified == true
                                             ? FlutterFlowTheme.of(context)
                                                 .primary
-                                            : const Color(0xFFFF0707),
+                                            : Color(0xFFFF0707),
                                         size: 35.0,
                                       ),
                                     ),
@@ -209,13 +212,13 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                       true
                                                   ? FlutterFlowTheme.of(context)
                                                       .primary
-                                                  : const Color(0xFFFF0707),
+                                                  : Color(0xFFFF0707),
                                               fontSize: 16.0,
                                               letterSpacing: 0.0,
                                             ),
                                       ),
                                     ),
-                                  ].divide(const SizedBox(width: 6.0)),
+                                  ].divide(SizedBox(width: 6.0)),
                                 ),
                               ),
                               if (currentUserEmailVerified == false)
@@ -239,7 +242,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                     MediaQuery.viewInsetsOf(
                                                         context),
                                                 child:
-                                                    const EmailVerficiationAlertWidget(),
+                                                    EmailVerficiationAlertWidget(),
                                               ),
                                             ),
                                           );
@@ -247,16 +250,16 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                       ).then((value) => safeSetState(() {}));
                                     },
                                     text: 'Verify Now',
-                                    icon: const Icon(
+                                    icon: Icon(
                                       Icons.verified_outlined,
                                       size: 16.0,
                                     ),
                                     options: FFButtonOptions(
                                       width: 125.0,
                                       height: 34.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 8.0),
-                                      iconPadding: const EdgeInsets.all(0.0),
+                                      iconPadding: EdgeInsets.all(0.0),
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
                                       textStyle: FlutterFlowTheme.of(context)
@@ -268,7 +271,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                             letterSpacing: 0.0,
                                           ),
                                       elevation: 0.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -277,10 +280,10 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                     ),
                                   ),
                                 ),
-                            ].divide(const SizedBox(height: 4.0)),
+                            ].divide(SizedBox(height: 4.0)),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
                             child: Container(
                               width: double.infinity,
@@ -351,12 +354,12 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                   ),
-                                ].divide(const SizedBox(width: 8.0)),
+                                ].divide(SizedBox(width: 8.0)),
                               ),
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -384,7 +387,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 24.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -410,7 +413,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
-                                              ].divide(const SizedBox(width: 12.0)),
+                                              ].divide(SizedBox(width: 12.0)),
                                             ),
                                           ),
                                           Icon(
@@ -419,7 +422,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                 .secondaryText,
                                             size: 24.0,
                                           ),
-                                        ].divide(const SizedBox(width: 8.0)),
+                                        ].divide(SizedBox(width: 8.0)),
                                       ),
                                     ),
                                   ),
@@ -447,7 +450,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 24.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -473,7 +476,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
-                                              ].divide(const SizedBox(width: 12.0)),
+                                              ].divide(SizedBox(width: 12.0)),
                                             ),
                                           ),
                                           Icon(
@@ -482,7 +485,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                 .secondaryText,
                                             size: 24.0,
                                           ),
-                                        ].divide(const SizedBox(width: 8.0)),
+                                        ].divide(SizedBox(width: 8.0)),
                                       ),
                                     ),
                                   ),
@@ -510,7 +513,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 24.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -536,7 +539,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
-                                              ].divide(const SizedBox(width: 12.0)),
+                                              ].divide(SizedBox(width: 12.0)),
                                             ),
                                           ),
                                           Icon(
@@ -545,7 +548,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                 .secondaryText,
                                             size: 24.0,
                                           ),
-                                        ].divide(const SizedBox(width: 8.0)),
+                                        ].divide(SizedBox(width: 8.0)),
                                       ),
                                     ),
                                   ),
@@ -573,7 +576,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 24.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -599,7 +602,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
-                                              ].divide(const SizedBox(width: 12.0)),
+                                              ].divide(SizedBox(width: 12.0)),
                                             ),
                                           ),
                                           Icon(
@@ -608,7 +611,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                 .secondaryText,
                                             size: 24.0,
                                           ),
-                                        ].divide(const SizedBox(width: 8.0)),
+                                        ].divide(SizedBox(width: 8.0)),
                                       ),
                                     ),
                                   ),
@@ -633,7 +636,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                             child: Padding(
                                               padding: MediaQuery.viewInsetsOf(
                                                   context),
-                                              child: const ShareMyAppWidget(),
+                                              child: ShareMyAppWidget(),
                                             ),
                                           ),
                                         );
@@ -653,7 +656,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 24.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -679,7 +682,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
-                                              ].divide(const SizedBox(width: 12.0)),
+                                              ].divide(SizedBox(width: 12.0)),
                                             ),
                                           ),
                                           Icon(
@@ -688,19 +691,19 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                 .secondaryText,
                                             size: 24.0,
                                           ),
-                                        ].divide(const SizedBox(width: 8.0)),
+                                        ].divide(SizedBox(width: 8.0)),
                                       ),
                                     ),
                                   ),
                                 ),
-                              ].divide(const SizedBox(height: 12.0)),
+                              ].divide(SizedBox(height: 12.0)),
                             ),
                           ),
                           Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 8.0, 16.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -717,9 +720,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                   options: FFButtonOptions(
                                     width: double.infinity,
                                     height: 55.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).primary,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -731,7 +734,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                           fontWeight: FontWeight.w600,
                                         ),
                                     elevation: 0.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -742,9 +745,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             ],
                           ),
                         ]
-                            .divide(const SizedBox(height: 24.0))
-                            .addToStart(const SizedBox(height: 24.0))
-                            .addToEnd(const SizedBox(height: 140.0)),
+                            .divide(SizedBox(height: 24.0))
+                            .addToStart(SizedBox(height: 24.0))
+                            .addToEnd(SizedBox(height: 140.0)),
                       ),
                     ),
                   ),
@@ -753,7 +756,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
               wrapWithModel(
                 model: _model.navBarModel,
                 updateCallback: () => setState(() {}),
-                child: const NavBarWidget(
+                child: NavBarWidget(
                   activePage: 5,
                 ),
               ),

@@ -3,6 +3,8 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'alert_reset_config_model.dart';
 export 'alert_reset_config_model.dart';
 
@@ -40,12 +42,12 @@ class _AlertResetConfigWidgetState extends State<AlertResetConfigWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 1.0),
+      alignment: AlignmentDirectional(0.0, 1.0),
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          borderRadius: const BorderRadius.only(
+          borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(0.0),
             bottomRight: Radius.circular(0.0),
             topLeft: Radius.circular(24.0),
@@ -53,7 +55,7 @@ class _AlertResetConfigWidgetState extends State<AlertResetConfigWidget> {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 32.0),
+          padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 32.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -66,7 +68,7 @@ class _AlertResetConfigWidgetState extends State<AlertResetConfigWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                 child: Text(
                   'Are you sure you want to reset Configurations ?',
                   textAlign: TextAlign.center,
@@ -79,7 +81,7 @@ class _AlertResetConfigWidgetState extends State<AlertResetConfigWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                 child: Text(
                   'all generated configurations will be reset !',
                   textAlign: TextAlign.start,
@@ -91,7 +93,7 @@ class _AlertResetConfigWidgetState extends State<AlertResetConfigWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     HapticFeedback.lightImpact();
@@ -99,7 +101,7 @@ class _AlertResetConfigWidgetState extends State<AlertResetConfigWidget> {
                     context.goNamed(
                       'submitPrompt',
                       extra: <String, dynamic>{
-                        kTransitionInfoKey: const TransitionInfo(
+                        kTransitionInfoKey: TransitionInfo(
                           hasTransition: true,
                           transitionType: PageTransitionType.fade,
                           duration: Duration(milliseconds: 0),
@@ -108,16 +110,16 @@ class _AlertResetConfigWidgetState extends State<AlertResetConfigWidget> {
                     );
                   },
                   text: 'Reset Configurations',
-                  icon: const Icon(
+                  icon: Icon(
                     Icons.restart_alt,
                     size: 30.0,
                   ),
                   options: FFButtonOptions(
                     width: double.infinity,
                     height: 55.0,
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).error,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',
@@ -126,7 +128,7 @@ class _AlertResetConfigWidgetState extends State<AlertResetConfigWidget> {
                           fontWeight: FontWeight.w600,
                         ),
                     elevation: 0.0,
-                    borderSide: const BorderSide(
+                    borderSide: BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),
@@ -135,7 +137,7 @@ class _AlertResetConfigWidgetState extends State<AlertResetConfigWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     HapticFeedback.lightImpact();
@@ -145,9 +147,9 @@ class _AlertResetConfigWidgetState extends State<AlertResetConfigWidget> {
                   options: FFButtonOptions(
                     width: double.infinity,
                     height: 55.0,
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).alternate,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',
@@ -156,7 +158,7 @@ class _AlertResetConfigWidgetState extends State<AlertResetConfigWidget> {
                           fontWeight: FontWeight.w600,
                         ),
                     elevation: 0.0,
-                    borderSide: const BorderSide(
+                    borderSide: BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),

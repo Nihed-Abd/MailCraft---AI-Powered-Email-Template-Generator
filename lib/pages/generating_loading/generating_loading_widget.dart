@@ -5,6 +5,8 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'generating_loading_model.dart';
 export 'generating_loading_model.dart';
 
@@ -53,7 +55,7 @@ class _GeneratingLoadingWidgetState extends State<GeneratingLoadingWidget> {
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       await geminiGenerateText(
         context,
-        'in one response message , give me html file code for an email page including all styles and animations needed to make an amazing animated email ready to sent with title : \"${widget.title}\" ,  matches this description : \"${widget.description}\" , for a${widget.category}. with this url well resized image and well displayed with content and title : the url \"${widget.image}\" . use this chart  colors: ( ${functions.colorToString(widget.color1)} , ${functions.colorToString(widget.color2)},${functions.colorToString(widget.color3)}). don\'t forget to make it in a creative and animated way in one code file to make the best page ever for what i need and make your response just a html code without any comments or buttons just an emails with content match description and title and category and chart color with animations and body message matches email elements .',
+        'in one response message , give me html file code for an email page including all styles and animations needed to make an amazing animated email ready to sent with title : \"${widget!.title}\" ,  matches this description : \"${widget!.description}\" , for a${widget!.category}. with this url well resized image and well displayed with content and title : the url \"${widget!.image}\" . use this chart  colors: ( ${functions.colorToString(widget!.color1)} , ${functions.colorToString(widget!.color2)},${functions.colorToString(widget!.color3)}). don\'t forget to make it in a creative and animated way in one code file to make the best page ever for what i need and make your response just a html code without any comments or buttons just an emails with content match description and title and category and chart color with animations and body message matches email elements .',
       ).then((generatedText) {
         safeSetState(() => _model.response = generatedText);
       });
@@ -69,31 +71,31 @@ class _GeneratingLoadingWidgetState extends State<GeneratingLoadingWidget> {
             ParamType.String,
           ),
           'title': serializeParam(
-            widget.title,
+            widget!.title,
             ParamType.String,
           ),
           'description': serializeParam(
-            widget.description,
+            widget!.description,
             ParamType.String,
           ),
           'color1': serializeParam(
-            widget.color1,
+            widget!.color1,
             ParamType.Color,
           ),
           'color2': serializeParam(
-            widget.color2,
+            widget!.color2,
             ParamType.Color,
           ),
           'color3': serializeParam(
-            widget.color3,
+            widget!.color3,
             ParamType.Color,
           ),
           'image': serializeParam(
-            widget.imagepath,
+            widget!.imagepath,
             ParamType.String,
           ),
           'category': serializeParam(
-            widget.category,
+            widget!.category,
             ParamType.String,
           ),
         }.withoutNulls,
@@ -115,14 +117,14 @@ class _GeneratingLoadingWidgetState extends State<GeneratingLoadingWidget> {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      decoration: const BoxDecoration(),
+      decoration: BoxDecoration(),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const Spacer(),
+          Spacer(),
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(44.0, 0.0, 44.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(44.0, 0.0, 44.0, 0.0),
             child: Container(
               width: 100.0,
               height: 505.0,
@@ -131,13 +133,13 @@ class _GeneratingLoadingWidgetState extends State<GeneratingLoadingWidget> {
                 borderRadius: BorderRadius.circular(16.0),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(30.0),
+                padding: EdgeInsets.all(30.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
@@ -164,7 +166,7 @@ class _GeneratingLoadingWidgetState extends State<GeneratingLoadingWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -187,7 +189,7 @@ class _GeneratingLoadingWidgetState extends State<GeneratingLoadingWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -210,11 +212,11 @@ class _GeneratingLoadingWidgetState extends State<GeneratingLoadingWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: wrapWithModel(
                         model: _model.loadingModel,
                         updateCallback: () => setState(() {}),
-                        child: const LoadingWidget(),
+                        child: LoadingWidget(),
                       ),
                     ),
                   ],
@@ -222,7 +224,7 @@ class _GeneratingLoadingWidgetState extends State<GeneratingLoadingWidget> {
               ),
             ),
           ),
-          const Spacer(),
+          Spacer(),
         ],
       ),
     );

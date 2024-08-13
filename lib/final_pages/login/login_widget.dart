@@ -8,6 +8,9 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'login_model.dart';
 export 'login_model.dart';
@@ -73,14 +76,14 @@ class _LoginWidgetState extends State<LoginWidget>
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-        body: SizedBox(
+        body: Container(
           width: double.infinity,
           height: double.infinity,
           child: Stack(
-            alignment: const AlignmentDirectional(0.0, 1.0),
+            alignment: AlignmentDirectional(0.0, 1.0),
             children: [
               Align(
-                alignment: const AlignmentDirectional(1.0, -1.4),
+                alignment: AlignmentDirectional(1.0, -1.4),
                 child: Container(
                   width: 500.0,
                   height: 500.0,
@@ -96,7 +99,7 @@ class _LoginWidgetState extends State<LoginWidget>
                 desktop: false,
               ))
                 Align(
-                  alignment: const AlignmentDirectional(-2.0, -1.5),
+                  alignment: AlignmentDirectional(-2.0, -1.5),
                   child: Container(
                     width: 350.0,
                     height: 350.0,
@@ -112,7 +115,7 @@ class _LoginWidgetState extends State<LoginWidget>
                 tablet: false,
               ))
                 Align(
-                  alignment: const AlignmentDirectional(-1.25, -1.5),
+                  alignment: AlignmentDirectional(-1.25, -1.5),
                   child: Container(
                     width: 600.0,
                     height: 600.0,
@@ -128,7 +131,7 @@ class _LoginWidgetState extends State<LoginWidget>
                 desktop: false,
               ))
                 Align(
-                  alignment: const AlignmentDirectional(2.5, -1.2),
+                  alignment: AlignmentDirectional(2.5, -1.2),
                   child: Container(
                     width: 300.0,
                     height: 300.0,
@@ -144,7 +147,7 @@ class _LoginWidgetState extends State<LoginWidget>
                 tablet: false,
               ))
                 Align(
-                  alignment: const AlignmentDirectional(1.0, -0.95),
+                  alignment: AlignmentDirectional(1.0, -0.95),
                   child: Container(
                     width: 700.0,
                     height: 700.0,
@@ -155,7 +158,7 @@ class _LoginWidgetState extends State<LoginWidget>
                   ),
                 ),
               Align(
-                alignment: const AlignmentDirectional(0.0, 1.0),
+                alignment: AlignmentDirectional(0.0, 1.0),
                 child: ClipRRect(
                   child: BackdropFilter(
                     filter: ImageFilter.blur(
@@ -163,7 +166,7 @@ class _LoginWidgetState extends State<LoginWidget>
                       sigmaY: 40.0,
                     ),
                     child: Align(
-                      alignment: const AlignmentDirectional(0.0, 1.0),
+                      alignment: AlignmentDirectional(0.0, 1.0),
                       child: Container(
                         width: double.infinity,
                         height: double.infinity,
@@ -175,15 +178,15 @@ class _LoginWidgetState extends State<LoginWidget>
                             ).image,
                           ),
                         ),
-                        alignment: const AlignmentDirectional(0.0, 1.0),
+                        alignment: AlignmentDirectional(0.0, 1.0),
                         child: Align(
-                          alignment: const AlignmentDirectional(0.0, 1.0),
+                          alignment: AlignmentDirectional(0.0, 1.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 64.0, 0.0, 24.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -204,11 +207,11 @@ class _LoginWidgetState extends State<LoginWidget>
                               ),
                               Expanded(
                                 child: Align(
-                                  alignment: const AlignmentDirectional(0.0, 1.0),
+                                  alignment: AlignmentDirectional(0.0, 1.0),
                                   child: Container(
                                     width: double.infinity,
                                     height: 600.0,
-                                    constraints: const BoxConstraints(
+                                    constraints: BoxConstraints(
                                       maxWidth: 570.0,
                                     ),
                                     decoration: BoxDecoration(
@@ -223,7 +226,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                           child: Column(
                                             children: [
                                               Align(
-                                                alignment: const Alignment(0.0, 0),
+                                                alignment: Alignment(0.0, 0),
                                                 child: TabBar(
                                                   isScrollable: true,
                                                   labelColor:
@@ -235,7 +238,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                               context)
                                                           .secondary,
                                                   labelPadding:
-                                                      const EdgeInsetsDirectional
+                                                      EdgeInsetsDirectional
                                                           .fromSTEB(24.0, 0.0,
                                                               24.0, 0.0),
                                                   labelStyle:
@@ -248,13 +251,13 @@ class _LoginWidgetState extends State<LoginWidget>
                                                             letterSpacing: 0.0,
                                                           ),
                                                   unselectedLabelStyle:
-                                                      const TextStyle(),
+                                                      TextStyle(),
                                                   indicatorColor:
                                                       FlutterFlowTheme.of(
                                                               context)
                                                           .primary,
                                                   indicatorWeight: 2.0,
-                                                  tabs: const [
+                                                  tabs: [
                                                     Tab(
                                                       text: 'Sign In',
                                                     ),
@@ -284,7 +287,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         24.0,
                                                                         20.0,
@@ -325,7 +328,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                 enabledBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      const BorderSide(
+                                                                      BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 1.0,
@@ -338,7 +341,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                 focusedBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      const BorderSide(
+                                                                      BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 1.0,
@@ -381,7 +384,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                         context)
                                                                     .primaryBackground,
                                                                 contentPadding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             20.0,
                                                                             24.0,
@@ -405,7 +408,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         24.0,
                                                                         12.0,
@@ -446,7 +449,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                 enabledBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      const BorderSide(
+                                                                      BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 1.0,
@@ -459,7 +462,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                 focusedBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      const BorderSide(
+                                                                      BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 1.0,
@@ -502,7 +505,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                         context)
                                                                     .primaryBackground,
                                                                 contentPadding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             20.0,
                                                                             24.0,
@@ -550,7 +553,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         24.0,
                                                                         16.0,
@@ -599,7 +602,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                             child:
                                                                                 Padding(
                                                                               padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: const ForgotPasswordWidget(),
+                                                                              child: ForgotPasswordWidget(),
                                                                             ),
                                                                           ),
                                                                         );
@@ -616,14 +619,14 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                         140.0,
                                                                     height:
                                                                         40.0,
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
                                                                     iconPadding:
-                                                                        const EdgeInsetsDirectional.fromSTEB(
+                                                                        EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -702,7 +705,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                             child:
                                                                                 Padding(
                                                                               padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: const LoginComponentWidget(),
+                                                                              child: LoginComponentWidget(),
                                                                             ),
                                                                           ),
                                                                         );
@@ -724,14 +727,14 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                         130.0,
                                                                     height:
                                                                         50.0,
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
                                                                     iconPadding:
-                                                                        const EdgeInsetsDirectional.fromSTEB(
+                                                                        EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -784,7 +787,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           20.0,
@@ -825,7 +828,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                   enabledBorder:
                                                                       OutlineInputBorder(
                                                                     borderSide:
-                                                                        const BorderSide(
+                                                                        BorderSide(
                                                                       color: Color(
                                                                           0x00000000),
                                                                       width:
@@ -838,7 +841,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                   focusedBorder:
                                                                       OutlineInputBorder(
                                                                     borderSide:
-                                                                        const BorderSide(
+                                                                        BorderSide(
                                                                       color: Color(
                                                                           0x00000000),
                                                                       width:
@@ -881,7 +884,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                           context)
                                                                       .primaryBackground,
                                                                   contentPadding:
-                                                                      const EdgeInsetsDirectional.fromSTEB(
+                                                                      EdgeInsetsDirectional.fromSTEB(
                                                                           20.0,
                                                                           24.0,
                                                                           20.0,
@@ -904,7 +907,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           20.0,
@@ -945,7 +948,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                   enabledBorder:
                                                                       OutlineInputBorder(
                                                                     borderSide:
-                                                                        const BorderSide(
+                                                                        BorderSide(
                                                                       color: Color(
                                                                           0x00000000),
                                                                       width:
@@ -958,7 +961,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                   focusedBorder:
                                                                       OutlineInputBorder(
                                                                     borderSide:
-                                                                        const BorderSide(
+                                                                        BorderSide(
                                                                       color: Color(
                                                                           0x00000000),
                                                                       width:
@@ -1001,7 +1004,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                           context)
                                                                       .primaryBackground,
                                                                   contentPadding:
-                                                                      const EdgeInsetsDirectional.fromSTEB(
+                                                                      EdgeInsetsDirectional.fromSTEB(
                                                                           20.0,
                                                                           24.0,
                                                                           20.0,
@@ -1024,7 +1027,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           20.0,
@@ -1065,7 +1068,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                   enabledBorder:
                                                                       OutlineInputBorder(
                                                                     borderSide:
-                                                                        const BorderSide(
+                                                                        BorderSide(
                                                                       color: Color(
                                                                           0x00000000),
                                                                       width:
@@ -1078,7 +1081,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                   focusedBorder:
                                                                       OutlineInputBorder(
                                                                     borderSide:
-                                                                        const BorderSide(
+                                                                        BorderSide(
                                                                       color: Color(
                                                                           0x00000000),
                                                                       width:
@@ -1121,7 +1124,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                           context)
                                                                       .primaryBackground,
                                                                   contentPadding:
-                                                                      const EdgeInsetsDirectional.fromSTEB(
+                                                                      EdgeInsetsDirectional.fromSTEB(
                                                                           20.0,
                                                                           24.0,
                                                                           20.0,
@@ -1151,7 +1154,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           12.0,
@@ -1192,7 +1195,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                   enabledBorder:
                                                                       OutlineInputBorder(
                                                                     borderSide:
-                                                                        const BorderSide(
+                                                                        BorderSide(
                                                                       color: Color(
                                                                           0x00000000),
                                                                       width:
@@ -1205,7 +1208,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                   focusedBorder:
                                                                       OutlineInputBorder(
                                                                     borderSide:
-                                                                        const BorderSide(
+                                                                        BorderSide(
                                                                       color: Color(
                                                                           0x00000000),
                                                                       width:
@@ -1248,7 +1251,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                           context)
                                                                       .primaryBackground,
                                                                   contentPadding:
-                                                                      const EdgeInsetsDirectional.fromSTEB(
+                                                                      EdgeInsetsDirectional.fromSTEB(
                                                                           20.0,
                                                                           24.0,
                                                                           20.0,
@@ -1296,7 +1299,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           12.0,
@@ -1337,7 +1340,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                   enabledBorder:
                                                                       OutlineInputBorder(
                                                                     borderSide:
-                                                                        const BorderSide(
+                                                                        BorderSide(
                                                                       color: Color(
                                                                           0x00000000),
                                                                       width:
@@ -1350,7 +1353,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                   focusedBorder:
                                                                       OutlineInputBorder(
                                                                     borderSide:
-                                                                        const BorderSide(
+                                                                        BorderSide(
                                                                       color: Color(
                                                                           0x00000000),
                                                                       width:
@@ -1393,7 +1396,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                           context)
                                                                       .primaryBackground,
                                                                   contentPadding:
-                                                                      const EdgeInsetsDirectional.fromSTEB(
+                                                                      EdgeInsetsDirectional.fromSTEB(
                                                                           20.0,
                                                                           24.0,
                                                                           20.0,
@@ -1441,7 +1444,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           16.0,
@@ -1463,7 +1466,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                     ScaffoldMessenger.of(
                                                                             context)
                                                                         .showSnackBar(
-                                                                      const SnackBar(
+                                                                      SnackBar(
                                                                         content:
                                                                             Text(
                                                                           'Passwords don\'t match!',
@@ -1530,7 +1533,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                             padding:
                                                                                 MediaQuery.viewInsetsOf(context),
                                                                             child:
-                                                                                const AddProfilePictureWidget(),
+                                                                                AddProfilePictureWidget(),
                                                                           ),
                                                                         ),
                                                                       );
@@ -1545,13 +1548,13 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                     FFButtonOptions(
                                                                   width: 190.0,
                                                                   height: 50.0,
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  iconPadding: const EdgeInsetsDirectional
+                                                                  iconPadding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1610,7 +1613,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                 Container(
                                   width: 200.0,
                                   height: 200.0,
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                 ),
                             ],
                           ),

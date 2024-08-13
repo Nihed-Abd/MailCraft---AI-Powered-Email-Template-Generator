@@ -1,8 +1,12 @@
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'loading_model.dart';
 export 'loading_model.dart';
 
@@ -40,8 +44,8 @@ class _LoadingWidgetState extends State<LoadingWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 800.0.ms,
-            begin: const Offset(0.0, 0.0),
-            end: const Offset(170.0, 0.0),
+            begin: Offset(0.0, 0.0),
+            end: Offset(170.0, 0.0),
           ),
         ],
       ),
@@ -66,7 +70,7 @@ class _LoadingWidgetState extends State<LoadingWidget>
         color: FlutterFlowTheme.of(context).accent4,
         borderRadius: BorderRadius.circular(100.0),
       ),
-      alignment: const AlignmentDirectional(-1.0, 0.0),
+      alignment: AlignmentDirectional(-1.0, 0.0),
       child: Container(
         width: 44.0,
         height: 7.0,
@@ -76,7 +80,7 @@ class _LoadingWidgetState extends State<LoadingWidget>
             BoxShadow(
               blurRadius: 15.0,
               color: FlutterFlowTheme.of(context).tertiary,
-              offset: const Offset(
+              offset: Offset(
                 0.0,
                 0.0,
               ),

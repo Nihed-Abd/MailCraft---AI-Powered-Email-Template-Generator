@@ -7,8 +7,11 @@ import '/flutter_flow/flutter_flow_web_view.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'display_template_result_model.dart';
 export 'display_template_result_model.dart';
@@ -79,12 +82,12 @@ class _DisplayTemplateResultWidgetState
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 40.0, 8.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 40.0, 8.0, 0.0),
                   child: Container(
                     width: double.infinity,
                     height: 410.0,
                     decoration: BoxDecoration(
-                      boxShadow: const [
+                      boxShadow: [
                         BoxShadow(
                           blurRadius: 4.0,
                           color: Color(0x33000000),
@@ -94,7 +97,7 @@ class _DisplayTemplateResultWidgetState
                           ),
                         )
                       ],
-                      borderRadius: const BorderRadius.only(
+                      borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(40.0),
                         bottomRight: Radius.circular(40.0),
                         topLeft: Radius.circular(40.0),
@@ -105,13 +108,13 @@ class _DisplayTemplateResultWidgetState
                         width: 2.0,
                       ),
                     ),
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Padding(
-                        padding: const EdgeInsets.all(12.0),
+                        padding: EdgeInsets.all(12.0),
                         child: FlutterFlowWebView(
-                          content: functions.convertToHtml(widget.code)!,
+                          content: functions.convertToHtml(widget!.code)!,
                           height: 507.0,
                           verticalScroll: false,
                           horizontalScroll: false,
@@ -122,7 +125,7 @@ class _DisplayTemplateResultWidgetState
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.asset(
@@ -135,13 +138,13 @@ class _DisplayTemplateResultWidgetState
                 ),
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 32.0),
+                      EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 32.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                         child: Text(
                           'Your Email is ready !',
                           textAlign: TextAlign.center,
@@ -157,7 +160,7 @@ class _DisplayTemplateResultWidgetState
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                         child: Text(
                           'submit the email adress distination to send ...',
                           textAlign: TextAlign.start,
@@ -177,9 +180,9 @@ class _DisplayTemplateResultWidgetState
                           children: [
                             Expanded(
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 24.0, 20.0, 12.0),
-                                child: SizedBox(
+                                child: Container(
                                   width: double.infinity,
                                   child: TextFormField(
                                     controller:
@@ -256,7 +259,7 @@ class _DisplayTemplateResultWidgetState
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 5.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -268,8 +271,8 @@ class _DisplayTemplateResultWidgetState
                                     context,
                                     _model.folderTitleTextController.text,
                                     currentUserDisplayName,
-                                    widget.code,
-                                    widget.category,
+                                    widget!.code,
+                                    widget!.category,
                                   );
                                   await showModalBottomSheet(
                                     isScrollControlled: true,
@@ -284,7 +287,7 @@ class _DisplayTemplateResultWidgetState
                                           child: Padding(
                                             padding: MediaQuery.viewInsetsOf(
                                                 context),
-                                            child: const EmailTemplateSentWidget(),
+                                            child: EmailTemplateSentWidget(),
                                           ),
                                         ),
                                       );
@@ -302,10 +305,10 @@ class _DisplayTemplateResultWidgetState
                         ),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Container(
                           width: 405.0,
-                          decoration: const BoxDecoration(),
+                          decoration: BoxDecoration(),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
@@ -320,11 +323,11 @@ class _DisplayTemplateResultWidgetState
                               ),
                               Flexible(
                                 child: Align(
-                                  alignment: const AlignmentDirectional(1.0, 0.0),
+                                  alignment: AlignmentDirectional(1.0, 0.0),
                                   child: Icon(
                                     FFIcons.klockFilled,
                                     color: _model.switchValue == false
-                                        ? const Color(0xFFFFA400)
+                                        ? Color(0xFFFFA400)
                                         : FlutterFlowTheme.of(context)
                                             .secondaryText,
                                     size: _model.switchValue == true
@@ -337,13 +340,13 @@ class _DisplayTemplateResultWidgetState
                                 value: _model.switchValue!,
                                 onChanged: (newValue) async {
                                   setState(
-                                      () => _model.switchValue = newValue);
+                                      () => _model.switchValue = newValue!);
                                 },
                                 activeColor:
                                     FlutterFlowTheme.of(context).primary,
-                                activeTrackColor: const Color(0x80257AFD),
-                                inactiveTrackColor: const Color(0x67FFA400),
-                                inactiveThumbColor: const Color(0xFFFFA400),
+                                activeTrackColor: Color(0x80257AFD),
+                                inactiveTrackColor: Color(0x67FFA400),
+                                inactiveThumbColor: Color(0xFFFFA400),
                               ),
                               Icon(
                                 Icons.public,
@@ -353,13 +356,13 @@ class _DisplayTemplateResultWidgetState
                                         .secondaryText,
                                 size: _model.switchValue == false ? 24.0 : 30.0,
                               ),
-                            ].divide(const SizedBox(width: 6.0)),
+                            ].divide(SizedBox(width: 6.0)),
                           ),
                         ),
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             HapticFeedback.lightImpact();
@@ -372,31 +375,31 @@ class _DisplayTemplateResultWidgetState
                                 .doc()
                                 .set(createTemplatesRecordData(
                                   date: getCurrentTimestamp,
-                                  code: widget.code,
-                                  image: widget.image,
+                                  code: widget!.code,
+                                  image: widget!.image,
                                   user: currentUserReference,
-                                  title: widget.title,
-                                  description: widget.description,
-                                  color1: widget.color1,
-                                  color2: widget.color2,
-                                  color3: widget.color3,
-                                  category: widget.category,
+                                  title: widget!.title,
+                                  description: widget!.description,
+                                  color1: widget!.color1,
+                                  color2: widget!.color2,
+                                  color3: widget!.color3,
+                                  category: widget!.category,
                                   private: _model.switchValue,
                                 ));
 
                             context.pushNamed('History');
                           },
                           text: 'Save  and Share ',
-                          icon: const Icon(
+                          icon: Icon(
                             FFIcons.kflashOutline,
                             size: 25.0,
                           ),
                           options: FFButtonOptions(
                             width: double.infinity,
                             height: 55.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -409,7 +412,7 @@ class _DisplayTemplateResultWidgetState
                                   fontWeight: FontWeight.w600,
                                 ),
                             elevation: 0.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -419,7 +422,7 @@ class _DisplayTemplateResultWidgetState
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             HapticFeedback.lightImpact();
@@ -427,7 +430,7 @@ class _DisplayTemplateResultWidgetState
                             context.goNamed(
                               'submitPrompt',
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: const TransitionInfo(
+                                kTransitionInfoKey: TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                   duration: Duration(milliseconds: 0),
@@ -439,9 +442,9 @@ class _DisplayTemplateResultWidgetState
                           options: FFButtonOptions(
                             width: double.infinity,
                             height: 55.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).alternate,
                             textStyle: FlutterFlowTheme.of(context)
@@ -454,7 +457,7 @@ class _DisplayTemplateResultWidgetState
                                   fontWeight: FontWeight.w600,
                                 ),
                             elevation: 0.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),

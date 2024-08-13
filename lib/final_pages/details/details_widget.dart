@@ -7,10 +7,15 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/rating_app/rating_app_widget.dart';
 import '/pages/see_email_template/see_email_template_widget.dart';
+import 'dart:math';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'details_model.dart';
 export 'details_model.dart';
@@ -60,8 +65,8 @@ class _DetailsWidgetState extends State<DetailsWidget>
             curve: Curves.bounceOut,
             delay: 0.0.ms,
             duration: 800.0.ms,
-            begin: const Offset(100.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(100.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -80,7 +85,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<TemplatesRecord>(
-      stream: TemplatesRecord.getDocument(widget.template!.reference),
+      stream: TemplatesRecord.getDocument(widget!.template!.reference),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -110,7 +115,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
             body: Stack(
               children: [
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -119,7 +124,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                         Container(
                           width: double.infinity,
                           height: 400.0,
-                          decoration: const BoxDecoration(
+                          decoration: BoxDecoration(
                             color: Color(0xFFEEEEEE),
                           ),
                           child: Stack(
@@ -140,18 +145,18 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                       FlutterFlowTheme.of(context)
                                           .primaryBackground
                                     ],
-                                    stops: const [0.0, 1.0],
-                                    begin: const AlignmentDirectional(0.0, -1.0),
-                                    end: const AlignmentDirectional(0, 1.0),
+                                    stops: [0.0, 1.0],
+                                    begin: AlignmentDirectional(0.0, -1.0),
+                                    end: AlignmentDirectional(0, 1.0),
                                   ),
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 1.0),
+                                alignment: AlignmentDirectional(0.0, 1.0),
                                 child: Container(
                                   width: double.infinity,
                                   height: 96.0,
-                                  decoration: const BoxDecoration(
+                                  decoration: BoxDecoration(
                                     color: Colors.transparent,
                                   ),
                                   child: Row(
@@ -160,7 +165,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 0.0, 16.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.min,
@@ -170,7 +175,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     -1.0, 0.0),
                                                 child: Text(
                                                   detailsTemplatesRecord.title,
@@ -194,7 +199,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 8.0, 10.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -231,7 +236,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                                 (value) => safeSetState(() {}));
                                           },
                                           text: 'See Email',
-                                          icon: const Icon(
+                                          icon: Icon(
                                             FFIcons.kcodeOutline,
                                             size: 16.0,
                                           ),
@@ -239,9 +244,9 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                             width: 139.0,
                                             height: 34.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 8.0, 0.0, 8.0),
-                                            iconPadding: const EdgeInsets.all(0.0),
+                                            iconPadding: EdgeInsets.all(0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                             textStyle:
@@ -255,7 +260,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 0.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -269,7 +274,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 30.0, 24.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -290,7 +295,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
-                                          borderRadius: const BorderRadius.only(
+                                          borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(40.0),
                                             bottomRight: Radius.circular(40.0),
                                             topLeft: Radius.circular(40.0),
@@ -302,7 +307,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                                 .primaryText,
                                           ),
                                         ),
-                                        child: const Icon(
+                                        child: Icon(
                                           Icons.arrow_back_ios_outlined,
                                           color: Colors.white,
                                           size: 20.0,
@@ -318,11 +323,11 @@ class _DetailsWidgetState extends State<DetailsWidget>
                         Container(
                           width: double.infinity,
                           height: 83.0,
-                          decoration: const BoxDecoration(
+                          decoration: BoxDecoration(
                             color: Colors.transparent,
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 0.0, 0.0),
                             child: StreamBuilder<UsersRecord>(
                               stream: UsersRecord.getDocument(
@@ -351,7 +356,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Text(
                                         'Generated By :',
                                         style: FlutterFlowTheme.of(context)
@@ -363,9 +368,9 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                       ),
                                     ),
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
                                         child: ClipRRect(
                                           borderRadius:
@@ -382,10 +387,10 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                     Expanded(
                                       child: Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.min,
@@ -395,7 +400,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     -1.0, 0.0),
                                                 child: Text(
                                                   rowUsersRecord.displayName,
@@ -416,7 +421,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 2.0, 0.0, 0.0),
                                                 child: Text(
@@ -444,7 +449,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -460,7 +465,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                         Flexible(
                                           child: Align(
                                             alignment:
-                                                const AlignmentDirectional(-1.0, 0.0),
+                                                AlignmentDirectional(-1.0, 0.0),
                                             child: Text(
                                               'Rating',
                                               style:
@@ -488,7 +493,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                           child: FutureBuilder<int>(
                                             future: queryLikesRecordCount(
                                               parent:
-                                                  widget.template?.reference,
+                                                  widget!.template?.reference,
                                             ),
                                             builder: (context, snapshot) {
                                               // Customize what your widget looks like when it's loading.
@@ -525,9 +530,9 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                             },
                                           ),
                                         ),
-                                      ].divide(const SizedBox(width: 8.0)),
+                                      ].divide(SizedBox(width: 8.0)),
                                     ),
-                                  ].divide(const SizedBox(height: 8.0)),
+                                  ].divide(SizedBox(height: 8.0)),
                                 ),
                               ),
                               Expanded(
@@ -540,7 +545,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                         Flexible(
                                           child: Align(
                                             alignment:
-                                                const AlignmentDirectional(-1.0, 0.0),
+                                                AlignmentDirectional(-1.0, 0.0),
                                             child: Text(
                                               'Category',
                                               style:
@@ -567,7 +572,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                         Flexible(
                                           child: Align(
                                             alignment:
-                                                const AlignmentDirectional(-1.0, 0.0),
+                                                AlignmentDirectional(-1.0, 0.0),
                                             child: Text(
                                               detailsTemplatesRecord.category,
                                               style:
@@ -580,12 +585,12 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                             ),
                                           ),
                                         ),
-                                      ].divide(const SizedBox(width: 8.0)),
+                                      ].divide(SizedBox(width: 8.0)),
                                     ),
-                                  ].divide(const SizedBox(height: 8.0)),
+                                  ].divide(SizedBox(height: 8.0)),
                                 ),
                               ),
-                            ].divide(const SizedBox(width: 8.0)),
+                            ].divide(SizedBox(width: 8.0)),
                           ),
                         ),
                         Divider(
@@ -598,11 +603,11 @@ class _DetailsWidgetState extends State<DetailsWidget>
                         Container(
                           width: double.infinity,
                           height: 178.0,
-                          decoration: const BoxDecoration(
+                          decoration: BoxDecoration(
                             color: Colors.transparent,
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -682,7 +687,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                   ],
                                 ),
                                 Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
@@ -701,7 +706,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                         color: detailsTemplatesRecord.color3,
                                         size: 40.0,
                                       ),
-                                    ].divide(const SizedBox(width: 10.0)),
+                                    ].divide(SizedBox(width: 10.0)),
                                   ),
                                 ),
                                 Row(
@@ -740,9 +745,9 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                             ),
                                       ),
                                     ),
-                                  ].divide(const SizedBox(width: 8.0)),
+                                  ].divide(SizedBox(width: 8.0)),
                                 ),
-                              ].divide(const SizedBox(height: 12.0)),
+                              ].divide(SizedBox(height: 12.0)),
                             ),
                           ),
                         ),
@@ -754,14 +759,14 @@ class _DetailsWidgetState extends State<DetailsWidget>
                           color: FlutterFlowTheme.of(context).primary,
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(1.0, 0.0),
+                          alignment: AlignmentDirectional(1.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Align(
-                                alignment: const AlignmentDirectional(1.0, -1.0),
+                                alignment: AlignmentDirectional(1.0, -1.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 10.0, 8.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
@@ -781,7 +786,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                                     MediaQuery.viewInsetsOf(
                                                         context),
                                                 child: RatingAppWidget(
-                                                  id: widget
+                                                  id: widget!
                                                       .template!.reference,
                                                 ),
                                               ),
@@ -791,16 +796,16 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                       ).then((value) => safeSetState(() {}));
                                     },
                                     text: 'Rate Now',
-                                    icon: const FaIcon(
+                                    icon: FaIcon(
                                       FontAwesomeIcons.solidStar,
                                       size: 16.0,
                                     ),
                                     options: FFButtonOptions(
                                       width: 139.0,
                                       height: 34.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 8.0),
-                                      iconPadding: const EdgeInsets.all(0.0),
+                                      iconPadding: EdgeInsets.all(0.0),
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
                                       textStyle: FlutterFlowTheme.of(context)
@@ -812,7 +817,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                             letterSpacing: 0.0,
                                           ),
                                       elevation: 0.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -834,7 +839,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                           ),
                           child: StreamBuilder<List<LikesRecord>>(
                             stream: queryLikesRecord(
-                              parent: widget.template?.reference,
+                              parent: widget!.template?.reference,
                               limit: 10,
                             ),
                             builder: (context, snapshot) {
@@ -863,7 +868,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                   final listViewLikesRecord =
                                       listViewLikesRecordList[listViewIndex];
                                   return Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         12.0, 12.0, 0.0, 12.0),
                                     child: StreamBuilder<UsersRecord>(
                                       stream: UsersRecord.getDocument(
@@ -909,12 +914,12 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsets.all(4.0),
+                                                padding: EdgeInsets.all(4.0),
                                                 child: Container(
                                                   width: 70.0,
                                                   height: 70.0,
                                                   clipBehavior: Clip.antiAlias,
-                                                  decoration: const BoxDecoration(
+                                                  decoration: BoxDecoration(
                                                     shape: BoxShape.circle,
                                                   ),
                                                   child: Image.network(
@@ -925,7 +930,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 8.0, 0.0, 0.0),
                                               child: Text(
                                                 friend1UsersRecord.displayName,
@@ -947,7 +952,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 8.0, 0.0, 0.0),
                                               child: RatingBarIndicator(
                                                 itemBuilder: (context, index) =>
@@ -961,7 +966,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                                 rating: listViewLikesRecord
                                                     .likes
                                                     .toDouble(),
-                                                unratedColor: const Color(0x44257AFD),
+                                                unratedColor: Color(0x44257AFD),
                                                 itemCount: 5,
                                                 itemSize: 20.0,
                                               ),
@@ -969,7 +974,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                             if (currentUserReference ==
                                                 listViewLikesRecord.user)
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 8.0, 0.0, 0.0),
                                                 child: InkWell(
@@ -1012,7 +1017,7 @@ class _DetailsWidgetState extends State<DetailsWidget>
                                                     ).then((value) =>
                                                         safeSetState(() {}));
                                                   },
-                                                  child: const FaIcon(
+                                                  child: FaIcon(
                                                     FontAwesomeIcons
                                                         .solidTrashAlt,
                                                     color: Color(0xFFFF0A14),

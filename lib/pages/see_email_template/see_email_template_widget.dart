@@ -3,6 +3,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_web_view.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'see_email_template_model.dart';
 export 'see_email_template_model.dart';
 
@@ -49,13 +51,13 @@ class _SeeEmailTemplateWidgetState extends State<SeeEmailTemplateWidget> {
     return Stack(
       children: [
         Align(
-          alignment: const AlignmentDirectional(0.0, 0.0),
+          alignment: AlignmentDirectional(0.0, 0.0),
           child: Container(
             width: 359.0,
             height: 554.0,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
-              borderRadius: const BorderRadius.only(
+              borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(40.0),
                 bottomRight: Radius.circular(40.0),
                 topLeft: Radius.circular(20.0),
@@ -63,7 +65,7 @@ class _SeeEmailTemplateWidgetState extends State<SeeEmailTemplateWidget> {
               ),
             ),
             child: FlutterFlowWebView(
-              content: widget.code!,
+              content: widget!.code!,
               height: 554.0,
               verticalScroll: false,
               horizontalScroll: false,
@@ -72,7 +74,7 @@ class _SeeEmailTemplateWidgetState extends State<SeeEmailTemplateWidget> {
           ),
         ),
         Align(
-          alignment: const AlignmentDirectional(0.97, -0.96),
+          alignment: AlignmentDirectional(0.97, -0.96),
           child: FlutterFlowIconButton(
             borderColor: FlutterFlowTheme.of(context).primaryText,
             borderRadius: 20.0,

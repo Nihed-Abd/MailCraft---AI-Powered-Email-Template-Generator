@@ -3,10 +3,14 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'alert_generation_model.dart';
 export 'alert_generation_model.dart';
 
@@ -65,7 +69,7 @@ class _AlertGenerationWidgetState extends State<AlertGenerationWidget>
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Container(
         width: 350.0,
         decoration: BoxDecoration(
@@ -76,12 +80,12 @@ class _AlertGenerationWidgetState extends State<AlertGenerationWidget>
           ),
         ),
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
+          padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               Align(
-                alignment: const AlignmentDirectional(1.0, 0.0),
+                alignment: AlignmentDirectional(1.0, 0.0),
                 child: FlutterFlowIconButton(
                   borderColor: FlutterFlowTheme.of(context).primaryText,
                   borderRadius: 30.0,
@@ -108,7 +112,7 @@ class _AlertGenerationWidgetState extends State<AlertGenerationWidget>
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 0.0, 0.0),
                 child: Text(
                   'You Must Complete the steps before generating',
                   textAlign: TextAlign.center,
@@ -121,23 +125,23 @@ class _AlertGenerationWidgetState extends State<AlertGenerationWidget>
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     HapticFeedback.lightImpact();
                     Navigator.pop(context);
                   },
                   text: 'continue',
-                  icon: const FaIcon(
+                  icon: FaIcon(
                     FontAwesomeIcons.bolt,
                     size: 30.0,
                   ),
                   options: FFButtonOptions(
                     width: double.infinity,
                     height: 55.0,
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',
@@ -147,7 +151,7 @@ class _AlertGenerationWidgetState extends State<AlertGenerationWidget>
                           fontWeight: FontWeight.w600,
                         ),
                     elevation: 0.0,
-                    borderSide: const BorderSide(
+                    borderSide: BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),

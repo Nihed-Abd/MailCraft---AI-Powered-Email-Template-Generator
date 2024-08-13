@@ -6,6 +6,8 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutterflow_colorpicker/flutterflow_colorpicker.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'add_color_model.dart';
 export 'add_color_model.dart';
@@ -53,12 +55,12 @@ class _AddColorWidgetState extends State<AddColorWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 1.0),
+      alignment: AlignmentDirectional(0.0, 1.0),
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          borderRadius: const BorderRadius.only(
+          borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(0.0),
             bottomRight: Radius.circular(0.0),
             topLeft: Radius.circular(24.0),
@@ -66,7 +68,7 @@ class _AddColorWidgetState extends State<AddColorWidget> {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 32.0),
+          padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 32.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -79,7 +81,7 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                 child: Text(
                   'Choose a color scheme !',
                   textAlign: TextAlign.center,
@@ -92,7 +94,7 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                 child: Text(
                   'Select 3 Colors below .',
                   textAlign: TextAlign.start,
@@ -107,13 +109,13 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                 key: _model.formKey,
                 autovalidateMode: AutovalidateMode.disabled,
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Flexible(
                         child: Align(
-                          alignment: const AlignmentDirectional(1.0, 0.0),
+                          alignment: AlignmentDirectional(1.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -131,7 +133,7 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                                   size: 25.0,
                                 ),
                                 onPressed: () async {
-                                  final colorPicked1Color =
+                                  final _colorPicked1Color =
                                       await showFFColorPicker(
                                     context,
                                     currentColor: _model.colorPicked1 ??=
@@ -155,9 +157,9 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                                         isMobileWidth(context),
                                   );
 
-                                  if (colorPicked1Color != null) {
+                                  if (_colorPicked1Color != null) {
                                     safeSetState(() => _model.colorPicked1 =
-                                        colorPicked1Color);
+                                        _colorPicked1Color);
                                   }
 
                                   _model.color1 = _model.colorPicked1;
@@ -165,7 +167,7 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                                 },
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 5.0, 0.0, 0.0),
                                 child: Text(
                                   'Hello World',
@@ -183,7 +185,7 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                       ),
                       Flexible(
                         child: Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -201,7 +203,7 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                                   size: 25.0,
                                 ),
                                 onPressed: () async {
-                                  final colorPicked2Color =
+                                  final _colorPicked2Color =
                                       await showFFColorPicker(
                                     context,
                                     currentColor: _model.colorPicked2 ??=
@@ -225,9 +227,9 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                                         isMobileWidth(context),
                                   );
 
-                                  if (colorPicked2Color != null) {
+                                  if (_colorPicked2Color != null) {
                                     safeSetState(() => _model.colorPicked2 =
-                                        colorPicked2Color);
+                                        _colorPicked2Color);
                                   }
 
                                   _model.color2 = _model.colorPicked2;
@@ -235,7 +237,7 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                                 },
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 5.0, 0.0, 0.0),
                                 child: Text(
                                   'Second Color',
@@ -253,7 +255,7 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                       ),
                       Flexible(
                         child: Align(
-                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                          alignment: AlignmentDirectional(-1.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -271,7 +273,7 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                                   size: 25.0,
                                 ),
                                 onPressed: () async {
-                                  final colorPicked3Color =
+                                  final _colorPicked3Color =
                                       await showFFColorPicker(
                                     context,
                                     currentColor: _model.colorPicked3 ??=
@@ -295,9 +297,9 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                                         isMobileWidth(context),
                                   );
 
-                                  if (colorPicked3Color != null) {
+                                  if (_colorPicked3Color != null) {
                                     safeSetState(() => _model.colorPicked3 =
-                                        colorPicked3Color);
+                                        _colorPicked3Color);
                                   }
 
                                   _model.color3 = _model.colorPicked3;
@@ -305,7 +307,7 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                                 },
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 5.0, 0.0, 0.0),
                                 child: Text(
                                   'Third Color',
@@ -332,13 +334,13 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                         child: Text(
                           'or Choose from Templates below',
                           textAlign: TextAlign.start,
@@ -352,7 +354,7 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -360,7 +362,7 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                             Material(
                               color: Colors.transparent,
                               elevation: 2.0,
-                              shape: const RoundedRectangleBorder(
+                              shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(5.0),
                                   bottomRight: Radius.circular(5.0),
@@ -379,14 +381,14 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                                       blurRadius: 12.0,
                                       color: _model.pictureselected == 5
                                           ? FlutterFlowTheme.of(context).primary
-                                          : const Color(0x00000000),
-                                      offset: const Offset(
+                                          : Color(0x00000000),
+                                      offset: Offset(
                                         5.0,
                                         5.0,
                                       ),
                                     )
                                   ],
-                                  borderRadius: const BorderRadius.only(
+                                  borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(5.0),
                                     bottomRight: Radius.circular(5.0),
                                     topLeft: Radius.circular(5.0),
@@ -395,7 +397,7 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                                   border: Border.all(
                                     color: _model.pictureselected == 5
                                         ? FlutterFlowTheme.of(context).primary
-                                        : const Color(0x00000000),
+                                        : Color(0x00000000),
                                     width: 5.0,
                                   ),
                                 ),
@@ -405,9 +407,9 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    _model.color1 = const Color(0xFF006D77);
-                                    _model.color2 = const Color(0xFF83C5BE);
-                                    _model.color3 = const Color(0xFFEDF6F9);
+                                    _model.color1 = Color(0xFF006D77);
+                                    _model.color2 = Color(0xFF83C5BE);
+                                    _model.color3 = Color(0xFFEDF6F9);
                                     _model.pictureselected = 5;
                                     setState(() {});
                                   },
@@ -426,7 +428,7 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                             Material(
                               color: Colors.transparent,
                               elevation: 2.0,
-                              shape: const RoundedRectangleBorder(
+                              shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(5.0),
                                   bottomRight: Radius.circular(0.0),
@@ -445,14 +447,14 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                                       blurRadius: 12.0,
                                       color: _model.pictureselected == 6
                                           ? FlutterFlowTheme.of(context).primary
-                                          : const Color(0x00000000),
-                                      offset: const Offset(
+                                          : Color(0x00000000),
+                                      offset: Offset(
                                         5.0,
                                         5.0,
                                       ),
                                     )
                                   ],
-                                  borderRadius: const BorderRadius.only(
+                                  borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(5.0),
                                     bottomRight: Radius.circular(0.0),
                                     topLeft: Radius.circular(5.0),
@@ -461,7 +463,7 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                                   border: Border.all(
                                     color: _model.pictureselected == 6
                                         ? FlutterFlowTheme.of(context).primary
-                                        : const Color(0x00000000),
+                                        : Color(0x00000000),
                                     width: 5.0,
                                   ),
                                 ),
@@ -471,9 +473,9 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    _model.color1 = const Color(0xFF064789);
-                                    _model.color2 = const Color(0xFF427AA1);
-                                    _model.color3 = const Color(0xFFEBF2FA);
+                                    _model.color1 = Color(0xFF064789);
+                                    _model.color2 = Color(0xFF427AA1);
+                                    _model.color3 = Color(0xFFEBF2FA);
                                     _model.pictureselected = 6;
                                     setState(() {});
                                   },
@@ -492,7 +494,7 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                             Material(
                               color: Colors.transparent,
                               elevation: 2.0,
-                              shape: const RoundedRectangleBorder(
+                              shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(5.0),
                                   bottomRight: Radius.circular(5.0),
@@ -511,14 +513,14 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                                       blurRadius: 12.0,
                                       color: _model.pictureselected == 8
                                           ? FlutterFlowTheme.of(context).primary
-                                          : const Color(0x00000000),
-                                      offset: const Offset(
+                                          : Color(0x00000000),
+                                      offset: Offset(
                                         5.0,
                                         5.0,
                                       ),
                                     )
                                   ],
-                                  borderRadius: const BorderRadius.only(
+                                  borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(5.0),
                                     bottomRight: Radius.circular(5.0),
                                     topLeft: Radius.circular(5.0),
@@ -527,7 +529,7 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                                   border: Border.all(
                                     color: _model.pictureselected == 8
                                         ? FlutterFlowTheme.of(context).primary
-                                        : const Color(0x00000000),
+                                        : Color(0x00000000),
                                     width: 5.0,
                                   ),
                                 ),
@@ -537,9 +539,9 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    _model.color1 = const Color(0xFF2C6E49);
-                                    _model.color2 = const Color(0xFF4C956C);
-                                    _model.color3 = const Color(0xFFFEFEE3);
+                                    _model.color1 = Color(0xFF2C6E49);
+                                    _model.color2 = Color(0xFF4C956C);
+                                    _model.color3 = Color(0xFFFEFEE3);
                                     _model.pictureselected = 8;
                                     setState(() {});
                                   },
@@ -556,13 +558,13 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                               ),
                             ),
                           ]
-                              .divide(const SizedBox(width: 8.0))
-                              .addToStart(const SizedBox(width: 10.0)),
+                              .divide(SizedBox(width: 8.0))
+                              .addToStart(SizedBox(width: 10.0)),
                         ),
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -570,7 +572,7 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                             Material(
                               color: Colors.transparent,
                               elevation: 2.0,
-                              shape: const RoundedRectangleBorder(
+                              shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(5.0),
                                   bottomRight: Radius.circular(5.0),
@@ -587,14 +589,14 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                                       blurRadius: 12.0,
                                       color: _model.pictureselected == 1
                                           ? FlutterFlowTheme.of(context).primary
-                                          : const Color(0x00000000),
-                                      offset: const Offset(
+                                          : Color(0x00000000),
+                                      offset: Offset(
                                         5.0,
                                         5.0,
                                       ),
                                     )
                                   ],
-                                  borderRadius: const BorderRadius.only(
+                                  borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(5.0),
                                     bottomRight: Radius.circular(5.0),
                                     topLeft: Radius.circular(5.0),
@@ -603,7 +605,7 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                                   border: Border.all(
                                     color: _model.pictureselected == 1
                                         ? FlutterFlowTheme.of(context).primary
-                                        : const Color(0x00000000),
+                                        : Color(0x00000000),
                                     width: 5.0,
                                   ),
                                 ),
@@ -613,9 +615,9 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    _model.color1 = const Color(0xFFFFAF87);
-                                    _model.color2 = const Color(0xFFFF8E72);
-                                    _model.color3 = const Color(0xFFED6A5E);
+                                    _model.color1 = Color(0xFFFFAF87);
+                                    _model.color2 = Color(0xFFFF8E72);
+                                    _model.color3 = Color(0xFFED6A5E);
                                     _model.pictureselected = 1;
                                     setState(() {});
                                   },
@@ -634,7 +636,7 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                             Material(
                               color: Colors.transparent,
                               elevation: 2.0,
-                              shape: const RoundedRectangleBorder(
+                              shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(5.0),
                                   bottomRight: Radius.circular(5.0),
@@ -651,14 +653,14 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                                       blurRadius: 12.0,
                                       color: _model.pictureselected == 2
                                           ? FlutterFlowTheme.of(context).primary
-                                          : const Color(0x00000000),
-                                      offset: const Offset(
+                                          : Color(0x00000000),
+                                      offset: Offset(
                                         5.0,
                                         5.0,
                                       ),
                                     )
                                   ],
-                                  borderRadius: const BorderRadius.only(
+                                  borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(5.0),
                                     bottomRight: Radius.circular(5.0),
                                     topLeft: Radius.circular(5.0),
@@ -667,7 +669,7 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                                   border: Border.all(
                                     color: _model.pictureselected == 2
                                         ? FlutterFlowTheme.of(context).primary
-                                        : const Color(0x00000000),
+                                        : Color(0x00000000),
                                     width: 5.0,
                                   ),
                                 ),
@@ -677,9 +679,9 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    _model.color1 = const Color(0xFFDCE0D9);
-                                    _model.color2 = const Color(0xFFFBF6EF);
-                                    _model.color3 = const Color(0xFFEAD7C3);
+                                    _model.color1 = Color(0xFFDCE0D9);
+                                    _model.color2 = Color(0xFFFBF6EF);
+                                    _model.color3 = Color(0xFFEAD7C3);
                                     _model.pictureselected = 2;
                                     setState(() {});
                                   },
@@ -698,7 +700,7 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                             Material(
                               color: Colors.transparent,
                               elevation: 2.0,
-                              shape: const RoundedRectangleBorder(
+                              shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(5.0),
                                   bottomRight: Radius.circular(5.0),
@@ -717,14 +719,14 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                                       blurRadius: 12.0,
                                       color: _model.pictureselected == 4
                                           ? FlutterFlowTheme.of(context).primary
-                                          : const Color(0x00000000),
-                                      offset: const Offset(
+                                          : Color(0x00000000),
+                                      offset: Offset(
                                         5.0,
                                         5.0,
                                       ),
                                     )
                                   ],
-                                  borderRadius: const BorderRadius.only(
+                                  borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(5.0),
                                     bottomRight: Radius.circular(5.0),
                                     topLeft: Radius.circular(5.0),
@@ -733,7 +735,7 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                                   border: Border.all(
                                     color: _model.pictureselected == 4
                                         ? FlutterFlowTheme.of(context).primary
-                                        : const Color(0x00000000),
+                                        : Color(0x00000000),
                                     width: 5.0,
                                   ),
                                 ),
@@ -743,9 +745,9 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    _model.color1 = const Color(0xFF0B132B);
-                                    _model.color2 = const Color(0xFF1C2541);
-                                    _model.color3 = const Color(0xFF3A506B);
+                                    _model.color1 = Color(0xFF0B132B);
+                                    _model.color2 = Color(0xFF1C2541);
+                                    _model.color3 = Color(0xFF3A506B);
                                     _model.pictureselected = 4;
                                     setState(() {});
                                   },
@@ -762,8 +764,8 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                               ),
                             ),
                           ]
-                              .divide(const SizedBox(width: 8.0))
-                              .addToStart(const SizedBox(width: 10.0)),
+                              .divide(SizedBox(width: 8.0))
+                              .addToStart(SizedBox(width: 10.0)),
                         ),
                       ),
                     ],
@@ -771,7 +773,7 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     HapticFeedback.lightImpact();
@@ -782,15 +784,15 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                         'submitPromptStep4',
                         queryParameters: {
                           'title': serializeParam(
-                            widget.title,
+                            widget!.title,
                             ParamType.String,
                           ),
                           'description': serializeParam(
-                            widget.description,
+                            widget!.description,
                             ParamType.String,
                           ),
                           'category': serializeParam(
-                            widget.category,
+                            widget!.category,
                             ParamType.String,
                           ),
                           'color1': serializeParam(
@@ -817,7 +819,7 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                           return WebViewAware(
                             child: Padding(
                               padding: MediaQuery.viewInsetsOf(context),
-                              child: const AlertGenerationWidget(),
+                              child: AlertGenerationWidget(),
                             ),
                           );
                         },
@@ -828,9 +830,9 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                   options: FFButtonOptions(
                     width: double.infinity,
                     height: 55.0,
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',
@@ -839,7 +841,7 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                           fontWeight: FontWeight.w600,
                         ),
                     elevation: 0.0,
-                    borderSide: const BorderSide(
+                    borderSide: BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),
@@ -848,7 +850,7 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     HapticFeedback.lightImpact();
@@ -858,9 +860,9 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                   options: FFButtonOptions(
                     width: double.infinity,
                     height: 55.0,
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).alternate,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',
@@ -869,7 +871,7 @@ class _AddColorWidgetState extends State<AddColorWidget> {
                           fontWeight: FontWeight.w600,
                         ),
                     elevation: 0.0,
-                    borderSide: const BorderSide(
+                    borderSide: BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),

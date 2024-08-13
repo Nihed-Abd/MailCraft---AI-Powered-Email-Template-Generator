@@ -3,6 +3,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'account_created_model.dart';
 export 'account_created_model.dart';
 
@@ -40,11 +42,11 @@ class _AccountCreatedWidgetState extends State<AccountCreatedWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 1.0),
+      alignment: AlignmentDirectional(0.0, 1.0),
       child: Container(
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).primaryBackground,
-          borderRadius: const BorderRadius.only(
+          borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(0.0),
             bottomRight: Radius.circular(0.0),
             topLeft: Radius.circular(20.0),
@@ -52,7 +54,7 @@ class _AccountCreatedWidgetState extends State<AccountCreatedWidget> {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 60.0),
+          padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 60.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -84,7 +86,7 @@ class _AccountCreatedWidgetState extends State<AccountCreatedWidget> {
                   Container(
                     width: 130.0,
                     height: 120.0,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       shape: BoxShape.rectangle,
                     ),
                     child: ClipRRect(
@@ -97,7 +99,7 @@ class _AccountCreatedWidgetState extends State<AccountCreatedWidget> {
                       ),
                     ),
                   ),
-                ].addToStart(const SizedBox(height: 16.0)),
+                ].addToStart(SizedBox(height: 16.0)),
               ),
               Column(
                 mainAxisSize: MainAxisSize.min,
@@ -124,7 +126,7 @@ class _AccountCreatedWidgetState extends State<AccountCreatedWidget> {
                     children: [
                       Flexible(
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 20.0, 0.0),
                           child: Text(
                             'Congratulation! your account already created.\nPlease login to get amazing experience.',
@@ -143,7 +145,7 @@ class _AccountCreatedWidgetState extends State<AccountCreatedWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -156,9 +158,9 @@ class _AccountCreatedWidgetState extends State<AccountCreatedWidget> {
                             text: 'Log In',
                             options: FFButtonOptions(
                               height: 56.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   24.0, 16.0, 24.0, 16.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -176,9 +178,9 @@ class _AccountCreatedWidgetState extends State<AccountCreatedWidget> {
                       ],
                     ),
                   ),
-                ].divide(const SizedBox(height: 10.0)),
+                ].divide(SizedBox(height: 10.0)),
               ),
-            ].divide(const SizedBox(height: 30.0)),
+            ].divide(SizedBox(height: 30.0)),
           ),
         ),
       ),

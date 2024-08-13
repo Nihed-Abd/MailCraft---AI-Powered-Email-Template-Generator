@@ -10,7 +10,9 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+import 'package:provider/provider.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'reviews_model.dart';
@@ -47,7 +49,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
               onTap: () => FocusScope.of(context).unfocus(),
               child: Padding(
                 padding: MediaQuery.viewInsetsOf(context),
-                child: const AddAppReviwWidget(),
+                child: AddAppReviwWidget(),
               ),
             ),
           );
@@ -77,21 +79,21 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
           child: Stack(
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
                 child: Container(
                   width: double.infinity,
                   height: 728.0,
-                  decoration: const BoxDecoration(),
+                  decoration: BoxDecoration(),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Container(
                         width: double.infinity,
                         height: 185.0,
-                        decoration: const BoxDecoration(),
+                        decoration: BoxDecoration(),
                         child: Container(
                           width: double.infinity,
-                          decoration: const BoxDecoration(
+                          decoration: BoxDecoration(
                             borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(32.0),
                               bottomRight: Radius.circular(32.0),
@@ -105,9 +107,9 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                               Container(
                                 width: 113.0,
                                 height: 78.0,
-                                decoration: const BoxDecoration(),
+                                decoration: BoxDecoration(),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       20.0, 0.0, 0.0, 0.0),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(8.0),
@@ -121,7 +123,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     1.0, 0.0, 0.0, 0.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
@@ -137,7 +139,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                           ),
                                       colors: [
                                         FlutterFlowTheme.of(context).primary,
-                                        const Color(0xFF4485EB),
+                                        Color(0xFF4485EB),
                                         FlutterFlowTheme.of(context).secondary
                                       ],
                                       gradientDirection: GradientDirection.ltr,
@@ -153,7 +155,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                           ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 0.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
@@ -172,7 +174,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                                     padding:
                                                         MediaQuery.viewInsetsOf(
                                                             context),
-                                                    child: const AddAppReviwWidget(),
+                                                    child: AddAppReviwWidget(),
                                                   ),
                                                 ),
                                               );
@@ -181,7 +183,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                               (value) => safeSetState(() {}));
                                         },
                                         text: 'Give Review',
-                                        icon: const Icon(
+                                        icon: Icon(
                                           FFIcons.kstarFilled,
                                           size: 16.0,
                                         ),
@@ -189,9 +191,9 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                           width: 139.0,
                                           height: 34.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 8.0, 0.0, 8.0),
-                                          iconPadding: const EdgeInsets.all(0.0),
+                                          iconPadding: EdgeInsets.all(0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
                                           textStyle: FlutterFlowTheme.of(
@@ -205,7 +207,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                                 letterSpacing: 0.0,
                                               ),
                                           elevation: 0.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -224,13 +226,13 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                       Container(
                         width: double.infinity,
                         height: 538.0,
-                        decoration: const BoxDecoration(),
+                        decoration: BoxDecoration(),
                         child: PagedListView<DocumentSnapshot<Object?>?,
                             ReviewsRecord>.separated(
                           pagingController: _model.setListViewController(
                             ReviewsRecord.collection,
                           ),
-                          padding: const EdgeInsets.fromLTRB(
+                          padding: EdgeInsets.fromLTRB(
                             0,
                             24.0,
                             0,
@@ -238,7 +240,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                           ),
                           reverse: false,
                           scrollDirection: Axis.vertical,
-                          separatorBuilder: (_, __) => const SizedBox(height: 16.0),
+                          separatorBuilder: (_, __) => SizedBox(height: 16.0),
                           builderDelegate:
                               PagedChildBuilderDelegate<ReviewsRecord>(
                             // Customize what your widget looks like when it's loading the first page.
@@ -295,9 +297,9 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
 
                                   return Container(
                                     width: double.infinity,
-                                    decoration: const BoxDecoration(),
+                                    decoration: BoxDecoration(),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 10.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.min,
@@ -309,13 +311,13 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                                 width: 40.0,
                                                 height: 40.0,
                                                 clipBehavior: Clip.antiAlias,
-                                                decoration: const BoxDecoration(
+                                                decoration: BoxDecoration(
                                                   shape: BoxShape.circle,
                                                 ),
                                                 child: CachedNetworkImage(
-                                                  fadeInDuration: const Duration(
+                                                  fadeInDuration: Duration(
                                                       milliseconds: 500),
-                                                  fadeOutDuration: const Duration(
+                                                  fadeOutDuration: Duration(
                                                       milliseconds: 500),
                                                   imageUrl: containerUsersRecord
                                                       .photoUrl,
@@ -324,7 +326,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                               ),
                                               Expanded(
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 0.0, 8.0, 0.0),
                                                   child: Text(
@@ -366,7 +368,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
@@ -380,7 +382,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                                             itemBuilder:
                                                                 (context,
                                                                         index) =>
-                                                                    const Icon(
+                                                                    Icon(
                                                               Icons
                                                                   .star_rounded,
                                                               color: Color(
@@ -392,7 +394,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                                                 listViewReviewsRecord
                                                                     .rate
                                                                     .toDouble(),
-                                                            unratedColor: const Color(
+                                                            unratedColor: Color(
                                                                 0x73FFFFFF),
                                                             itemCount: 5,
                                                             itemSize: 15.0,
@@ -464,14 +466,14 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                                                     safeSetState(
                                                                         () {}));
                                                               },
-                                                              child: const Icon(
+                                                              child: Icon(
                                                                 FFIcons.ktrash,
                                                                 color: Color(
                                                                     0xFFFF1C21),
                                                                 size: 24.0,
                                                               ),
                                                             ),
-                                                        ].divide(const SizedBox(
+                                                        ].divide(SizedBox(
                                                             width: 8.0)),
                                                       ),
                                                     ),
@@ -508,7 +510,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                                   Expanded(
                                                     child: Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               1.0, 1.0),
                                                       child: Text(
                                                         dateTimeFormat(
@@ -534,9 +536,9 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
                                                   ),
                                                 ],
                                               ),
-                                            ].divide(const SizedBox(height: 5.0)),
+                                            ].divide(SizedBox(height: 5.0)),
                                           ),
-                                        ].divide(const SizedBox(height: 16.0)),
+                                        ].divide(SizedBox(height: 16.0)),
                                       ),
                                     ),
                                   );
@@ -553,7 +555,7 @@ class _ReviewsWidgetState extends State<ReviewsWidget> {
               wrapWithModel(
                 model: _model.navBarModel,
                 updateCallback: () => setState(() {}),
-                child: const NavBarWidget(
+                child: NavBarWidget(
                   activePage: 2,
                 ),
               ),

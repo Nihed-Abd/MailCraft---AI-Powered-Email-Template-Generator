@@ -3,13 +3,18 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import 'dart:math';
 import 'dart:math' as math;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'all_templates_model.dart';
 export 'all_templates_model.dart';
 
@@ -43,8 +48,8 @@ class _AllTemplatesWidgetState extends State<AllTemplatesWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, -60.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, -60.0),
+            end: Offset(0.0, 0.0),
           ),
           FadeEffect(
             curve: Curves.easeInOut,
@@ -63,15 +68,15 @@ class _AllTemplatesWidgetState extends State<AllTemplatesWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: const Offset(0, 0),
-            end: const Offset(0, 0.175),
+            begin: Offset(0, 0),
+            end: Offset(0, 0.175),
           ),
           TiltEffect(
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0, 0.175),
-            end: const Offset(0, 0),
+            begin: Offset(0, 0.175),
+            end: Offset(0, 0),
           ),
         ],
       ),
@@ -83,15 +88,15 @@ class _AllTemplatesWidgetState extends State<AllTemplatesWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: const Offset(0, 0),
-            end: const Offset(0, 0.175),
+            begin: Offset(0, 0),
+            end: Offset(0, 0.175),
           ),
           TiltEffect(
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0, 0.175),
-            end: const Offset(0, 0),
+            begin: Offset(0, 0.175),
+            end: Offset(0, 0),
           ),
         ],
       ),
@@ -151,8 +156,8 @@ class _AllTemplatesWidgetState extends State<AllTemplatesWidget>
           children: [
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.all(2.0),
-                child: SizedBox(
+                padding: EdgeInsets.all(2.0),
+                child: Container(
                   width: double.infinity,
                   height: double.infinity,
                   child: Stack(
@@ -163,7 +168,7 @@ class _AllTemplatesWidgetState extends State<AllTemplatesWidget>
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   24.0, 30.0, 24.0, 40.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -184,7 +189,7 @@ class _AllTemplatesWidgetState extends State<AllTemplatesWidget>
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
-                                        borderRadius: const BorderRadius.only(
+                                        borderRadius: BorderRadius.only(
                                           bottomLeft: Radius.circular(40.0),
                                           bottomRight: Radius.circular(40.0),
                                           topLeft: Radius.circular(40.0),
@@ -196,7 +201,7 @@ class _AllTemplatesWidgetState extends State<AllTemplatesWidget>
                                               .primaryText,
                                         ),
                                       ),
-                                      child: const Icon(
+                                      child: Icon(
                                         Icons.arrow_back_ios_outlined,
                                         color: Colors.white,
                                         size: 20.0,
@@ -207,16 +212,16 @@ class _AllTemplatesWidgetState extends State<AllTemplatesWidget>
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(1.0, -0.8),
+                              alignment: AlignmentDirectional(1.0, -0.8),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
                                 child: Transform.scale(
                                   scaleX: 1.1,
                                   scaleY: 1.0,
                                   child: Transform.rotate(
                                     angle: 16.0 * (math.pi / 180),
-                                    child: SizedBox(
+                                    child: Container(
                                       width: double.infinity,
                                       height: 200.0,
                                       child: CarouselSlider(
@@ -285,8 +290,8 @@ class _AllTemplatesWidgetState extends State<AllTemplatesWidget>
                                           scrollDirection: Axis.horizontal,
                                           autoPlay: true,
                                           autoPlayAnimationDuration:
-                                              const Duration(milliseconds: 800),
-                                          autoPlayInterval: const Duration(
+                                              Duration(milliseconds: 800),
+                                          autoPlayInterval: Duration(
                                               milliseconds: (800 + 4000)),
                                           autoPlayCurve: Curves.linear,
                                           pauseAutoPlayInFiniteScroll: true,
@@ -301,7 +306,7 @@ class _AllTemplatesWidgetState extends State<AllTemplatesWidget>
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 50.0, 0.0, 0.0),
                               child: SingleChildScrollView(
                                 scrollDirection: Axis.horizontal,
@@ -311,10 +316,10 @@ class _AllTemplatesWidgetState extends State<AllTemplatesWidget>
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 0.0, 0.0),
                                       child: FlutterFlowChoiceChips(
-                                        options: const [
+                                        options: [
                                           ChipData('ALL', Icons.all_inclusive),
                                           ChipData('Birthday',
                                               FontAwesomeIcons.birthdayCake),
@@ -349,7 +354,7 @@ class _AllTemplatesWidgetState extends State<AllTemplatesWidget>
                                                   .primaryBackground,
                                           iconSize: 18.0,
                                           labelPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   4.0, 4.0, 12.0, 4.0),
                                           elevation: 0.0,
                                           borderRadius:
@@ -374,7 +379,7 @@ class _AllTemplatesWidgetState extends State<AllTemplatesWidget>
                                                   .secondaryText,
                                           iconSize: 18.0,
                                           labelPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   4.0, 4.0, 12.0, 4.0),
                                           elevation: 0.0,
                                           borderRadius:
@@ -401,7 +406,7 @@ class _AllTemplatesWidgetState extends State<AllTemplatesWidget>
                             Container(
                               width: double.infinity,
                               height: 528.0,
-                              decoration: const BoxDecoration(),
+                              decoration: BoxDecoration(),
                               child: StreamBuilder<List<TemplatesRecord>>(
                                 stream: queryTemplatesRecord(
                                   queryBuilder: (templatesRecord) =>
@@ -444,28 +449,28 @@ class _AllTemplatesWidgetState extends State<AllTemplatesWidget>
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     30.0, 10.0, 30.0, 20.0),
                                             child: ClipRRect(
                                               borderRadius:
                                                   BorderRadius.circular(30.0),
                                               child: AnimatedContainer(
                                                 duration:
-                                                    const Duration(milliseconds: 200),
+                                                    Duration(milliseconds: 200),
                                                 curve: Curves.easeInOut,
                                                 width:
                                                     MediaQuery.sizeOf(context)
                                                             .width *
                                                         1.0,
                                                 height: 178.0,
-                                                constraints: const BoxConstraints(
+                                                constraints: BoxConstraints(
                                                   maxWidth: 450.0,
                                                 ),
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
-                                                  boxShadow: const [
+                                                  boxShadow: [
                                                     BoxShadow(
                                                       blurRadius: 30.0,
                                                       color: Color(0x33000000),
@@ -499,7 +504,7 @@ class _AllTemplatesWidgetState extends State<AllTemplatesWidget>
                                                       children: [
                                                         Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   0.0, -1.0),
                                                           child: StreamBuilder<
                                                               UsersRecord>(
@@ -536,7 +541,7 @@ class _AllTemplatesWidgetState extends State<AllTemplatesWidget>
                                                                       .data!;
 
                                                               return AnimatedContainer(
-                                                                duration: const Duration(
+                                                                duration: Duration(
                                                                     milliseconds:
                                                                         200),
                                                                 curve: Curves
@@ -544,15 +549,15 @@ class _AllTemplatesWidgetState extends State<AllTemplatesWidget>
                                                                 width: 201.0,
                                                                 height: 37.0,
                                                                 decoration:
-                                                                    const BoxDecoration(),
+                                                                    BoxDecoration(),
                                                                 child: Align(
                                                                   alignment:
-                                                                      const AlignmentDirectional(
+                                                                      AlignmentDirectional(
                                                                           0.0,
                                                                           0.0),
                                                                   child:
                                                                       Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -564,7 +569,7 @@ class _AllTemplatesWidgetState extends State<AllTemplatesWidget>
                                                                               .min,
                                                                       children: [
                                                                         Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               5.0,
@@ -581,19 +586,19 @@ class _AllTemplatesWidgetState extends State<AllTemplatesWidget>
                                                                               shape: BoxShape.circle,
                                                                             ),
                                                                             child:
-                                                                                SizedBox(
+                                                                                Container(
                                                                               width: 32.0,
                                                                               height: 32.0,
                                                                               child: Stack(
-                                                                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                alignment: AlignmentDirectional(0.0, 0.0),
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: const EdgeInsets.all(2.0),
+                                                                                    padding: EdgeInsets.all(2.0),
                                                                                     child: Container(
                                                                                       width: 30.0,
                                                                                       height: 30.0,
                                                                                       clipBehavior: Clip.antiAlias,
-                                                                                      decoration: const BoxDecoration(
+                                                                                      decoration: BoxDecoration(
                                                                                         shape: BoxShape.circle,
                                                                                       ),
                                                                                       child: Image.network(
@@ -641,7 +646,7 @@ class _AllTemplatesWidgetState extends State<AllTemplatesWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     30.0, 10.0, 30.0, 20.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -670,14 +675,14 @@ class _AllTemplatesWidgetState extends State<AllTemplatesWidget>
                                                             .width *
                                                         1.0,
                                                 height: 125.0,
-                                                constraints: const BoxConstraints(
+                                                constraints: BoxConstraints(
                                                   maxWidth: 450.0,
                                                 ),
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryBackground,
-                                                  boxShadow: const [
+                                                  boxShadow: [
                                                     BoxShadow(
                                                       blurRadius: 30.0,
                                                       color: Color(0x33000000),
@@ -697,7 +702,7 @@ class _AllTemplatesWidgetState extends State<AllTemplatesWidget>
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(20.0, 10.0,
                                                           20.0, 20.0),
                                                   child: Column(
@@ -736,7 +741,7 @@ class _AllTemplatesWidgetState extends State<AllTemplatesWidget>
                                                             flex: 2,
                                                             child: Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           15.0,
                                                                           0.0,

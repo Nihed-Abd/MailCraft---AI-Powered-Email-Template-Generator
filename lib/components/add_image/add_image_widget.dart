@@ -5,6 +5,8 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'add_image_model.dart';
 export 'add_image_model.dart';
 
@@ -57,12 +59,12 @@ class _AddImageWidgetState extends State<AddImageWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 1.0),
+      alignment: AlignmentDirectional(0.0, 1.0),
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          borderRadius: const BorderRadius.only(
+          borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(0.0),
             bottomRight: Radius.circular(0.0),
             topLeft: Radius.circular(24.0),
@@ -70,7 +72,7 @@ class _AddImageWidgetState extends State<AddImageWidget> {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 32.0),
+          padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 32.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -83,7 +85,7 @@ class _AddImageWidgetState extends State<AddImageWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                 child: Text(
                   'Upload Your Logo',
                   textAlign: TextAlign.center,
@@ -96,7 +98,7 @@ class _AddImageWidgetState extends State<AddImageWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                 child: Text(
                   'Add your logo to personalize the template',
                   textAlign: TextAlign.start,
@@ -117,12 +119,12 @@ class _AddImageWidgetState extends State<AddImageWidget> {
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
                   child: Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Container(
                             width: 250.0,
                             height: 51.0,
@@ -131,7 +133,7 @@ class _AddImageWidgetState extends State<AddImageWidget> {
                                   .secondaryBackground,
                             ),
                             child: Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   final selectedMedia =
@@ -199,9 +201,9 @@ class _AddImageWidgetState extends State<AddImageWidget> {
                                 ),
                                 options: FFButtonOptions(
                                   height: 54.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -212,7 +214,7 @@ class _AddImageWidgetState extends State<AddImageWidget> {
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -222,10 +224,11 @@ class _AddImageWidgetState extends State<AddImageWidget> {
                             ),
                           ),
                         ),
-                        if (_model.uploadedFileUrl != '')
+                        if (_model.uploadedFileUrl != null &&
+                            _model.uploadedFileUrl != '')
                           Flexible(
                             child: Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Container(
                                 width: 100.0,
                                 height: 100.0,
@@ -251,7 +254,7 @@ class _AddImageWidgetState extends State<AddImageWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     HapticFeedback.lightImpact();
@@ -264,27 +267,27 @@ class _AddImageWidgetState extends State<AddImageWidget> {
                       'SubmitisReady',
                       queryParameters: {
                         'title': serializeParam(
-                          widget.title,
+                          widget!.title,
                           ParamType.String,
                         ),
                         'description': serializeParam(
-                          widget.description,
+                          widget!.description,
                           ParamType.String,
                         ),
                         'category': serializeParam(
-                          widget.category,
+                          widget!.category,
                           ParamType.String,
                         ),
                         'color1': serializeParam(
-                          widget.color1,
+                          widget!.color1,
                           ParamType.Color,
                         ),
                         'color2': serializeParam(
-                          widget.color2,
+                          widget!.color2,
                           ParamType.Color,
                         ),
                         'color3': serializeParam(
-                          widget.color3,
+                          widget!.color3,
                           ParamType.Color,
                         ),
                         'imagePath': serializeParam(
@@ -302,9 +305,9 @@ class _AddImageWidgetState extends State<AddImageWidget> {
                   options: FFButtonOptions(
                     width: double.infinity,
                     height: 55.0,
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',
@@ -313,7 +316,7 @@ class _AddImageWidgetState extends State<AddImageWidget> {
                           fontWeight: FontWeight.w600,
                         ),
                     elevation: 0.0,
-                    borderSide: const BorderSide(
+                    borderSide: BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),
@@ -322,7 +325,7 @@ class _AddImageWidgetState extends State<AddImageWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     HapticFeedback.lightImpact();
@@ -335,27 +338,27 @@ class _AddImageWidgetState extends State<AddImageWidget> {
                       'SubmitisReady',
                       queryParameters: {
                         'title': serializeParam(
-                          widget.title,
+                          widget!.title,
                           ParamType.String,
                         ),
                         'description': serializeParam(
-                          widget.description,
+                          widget!.description,
                           ParamType.String,
                         ),
                         'category': serializeParam(
-                          widget.category,
+                          widget!.category,
                           ParamType.String,
                         ),
                         'color1': serializeParam(
-                          widget.color1,
+                          widget!.color1,
                           ParamType.Color,
                         ),
                         'color2': serializeParam(
-                          widget.color2,
+                          widget!.color2,
                           ParamType.Color,
                         ),
                         'color3': serializeParam(
-                          widget.color3,
+                          widget!.color3,
                           ParamType.Color,
                         ),
                         'imagePath': serializeParam(
@@ -373,9 +376,9 @@ class _AddImageWidgetState extends State<AddImageWidget> {
                   options: FFButtonOptions(
                     width: double.infinity,
                     height: 55.0,
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',
@@ -384,7 +387,7 @@ class _AddImageWidgetState extends State<AddImageWidget> {
                           fontWeight: FontWeight.w600,
                         ),
                     elevation: 0.0,
-                    borderSide: const BorderSide(
+                    borderSide: BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),
@@ -393,7 +396,7 @@ class _AddImageWidgetState extends State<AddImageWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     HapticFeedback.lightImpact();
@@ -403,9 +406,9 @@ class _AddImageWidgetState extends State<AddImageWidget> {
                   options: FFButtonOptions(
                     width: double.infinity,
                     height: 55.0,
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).alternate,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',
@@ -414,7 +417,7 @@ class _AddImageWidgetState extends State<AddImageWidget> {
                           fontWeight: FontWeight.w600,
                         ),
                     elevation: 0.0,
-                    borderSide: const BorderSide(
+                    borderSide: BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),

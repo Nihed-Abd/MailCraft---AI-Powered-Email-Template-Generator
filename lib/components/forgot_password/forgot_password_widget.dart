@@ -5,6 +5,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'forgot_password_model.dart';
 export 'forgot_password_model.dart';
@@ -49,11 +51,11 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
       mainAxisSize: MainAxisSize.max,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        const Spacer(flex: 2),
+        Spacer(flex: 2),
         Container(
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).primaryBackground,
-            borderRadius: const BorderRadius.only(
+            borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(0.0),
               bottomRight: Radius.circular(0.0),
               topLeft: Radius.circular(20.0),
@@ -61,7 +63,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 60.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 60.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -70,7 +72,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                   children: [
                     Flexible(
                       child: Align(
-                        alignment: const AlignmentDirectional(2.0, 0.0),
+                        alignment: AlignmentDirectional(2.0, 0.0),
                         child: Container(
                           width: 100.0,
                           height: 5.0,
@@ -83,9 +85,9 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                     ),
                     Expanded(
                       child: Align(
-                        alignment: const AlignmentDirectional(1.0, 0.0),
+                        alignment: AlignmentDirectional(1.0, 0.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 5.0, 10.0, 0.0),
                           child: FlutterFlowIconButton(
                             borderColor:
@@ -110,7 +112,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -146,11 +148,11 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                           ),
                         ],
                       ),
-                    ].divide(const SizedBox(height: 4.0)),
+                    ].divide(SizedBox(height: 4.0)),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -175,15 +177,15 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                         children: [
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsets.all(4.0),
-                              child: SizedBox(
+                              padding: EdgeInsets.all(4.0),
+                              child: Container(
                                 width: 250.0,
                                 child: TextFormField(
                                   controller:
                                       _model.userNameTextFieldTextController,
                                   focusNode: _model.userNameTextFieldFocusNode,
                                   autofocus: false,
-                                  autofillHints: const [AutofillHints.email],
+                                  autofillHints: [AutofillHints.email],
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     isDense: false,
@@ -237,7 +239,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                       borderRadius: BorderRadius.circular(16.0),
                                     ),
                                     contentPadding:
-                                        const EdgeInsetsDirectional.fromSTEB(
+                                        EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 0.0, 0.0),
                                     prefixIcon: Icon(
                                       FFIcons.kmail,
@@ -262,12 +264,12 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                           ),
                         ],
                       ),
-                    ].divide(const SizedBox(height: 10.0)),
+                    ].divide(SizedBox(height: 10.0)),
                   ),
                 ),
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(24.0, 20.0, 24.0, 0.0),
+                      EdgeInsetsDirectional.fromSTEB(24.0, 20.0, 24.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -277,7 +279,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                             if (_model
                                 .userNameTextFieldTextController.text.isEmpty) {
                               ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
+                                SnackBar(
                                   content: Text(
                                     'Email required!',
                                   ),
@@ -300,7 +302,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                 return WebViewAware(
                                   child: Padding(
                                     padding: MediaQuery.viewInsetsOf(context),
-                                    child: const EmailSentWidget(),
+                                    child: EmailSentWidget(),
                                   ),
                                 );
                               },
@@ -309,9 +311,9 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                           text: 'Send Reset Link',
                           options: FFButtonOptions(
                             height: 56.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 16.0, 24.0, 16.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -329,7 +331,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                     ],
                   ),
                 ),
-              ].divide(const SizedBox(height: 30.0)),
+              ].divide(SizedBox(height: 30.0)),
             ),
           ),
         ),
